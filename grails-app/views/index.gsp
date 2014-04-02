@@ -2,7 +2,7 @@
 <html>
 	<head>
 		<meta name="layout" content="main" charset="UTF-8"/>
-		<title>Escuela de Inglés</title>
+		<title>Escuela</title>
 		<style type="text/css" media="screen">
 
 			#status ul {
