@@ -4,8 +4,6 @@
 		<meta name="layout" content="main" charset="UTF-8"/>
 		<title>Escuela de Inglés</title>
 		<style type="text/css" media="screen">
-			
-
 
 			#status ul {
 				font-size: 0.9em;
@@ -55,7 +53,7 @@
 		<a href="#page-body" class="skip"><g:message code="default.link.skip.label" default="Skip to content&hellip;"/></a>
 		<div id="page-body" role="main">
 			<h1>Bienvenido</h1>
-			<p>En esta página podrás inscribirte a cursos personales de inglés.</p>
+			<p>En esta página podrás inscribirte a cursos personales de inglés, o registrarte como profesor para dar clases tu mismo</p>
 
 			<div id="controller-list" role="navigation">
 				<h2>Available Controllers:</h2>
