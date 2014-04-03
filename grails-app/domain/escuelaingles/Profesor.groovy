@@ -8,6 +8,7 @@ class Profesor {
     String correo
     
     
+    static hasMany=[cursos:Curso]
 
     static constraints = {
         correo blank : false

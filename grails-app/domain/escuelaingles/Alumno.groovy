@@ -9,6 +9,7 @@ class Alumno {
     String correo
     String telefono
     
+    static hasMany=[inscripciones:Inscripcion]
 
     static constraints = {
         correo blank : false
