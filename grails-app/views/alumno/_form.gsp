@@ -20,7 +20,7 @@
 
 <div class="fieldcontain ${hasErrors(bean: alumnoInstance, field: 'apellp', 'error')} required">
 	<label for="apellp">
-		<g:message code="alumno.apellp.label" default="Apellp" />
+		<g:message code="alumno.apellp.label" default="Apellido Paterno" />
 		<span class="required-indicator">*</span>
 	</label>
 	<g:textField name="apellp" required="" value="${alumnoInstance?.apellp}"/>
@@ -28,7 +28,7 @@
 
 <div class="fieldcontain ${hasErrors(bean: alumnoInstance, field: 'apellm', 'error')} required">
 	<label for="apellm">
-		<g:message code="alumno.apellm.label" default="Apellm" />
+		<g:message code="alumno.apellm.label" default="Apellido Materno" />
 		<span class="required-indicator">*</span>
 	</label>
 	<g:textField name="apellm" required="" value="${alumnoInstance?.apellm}"/>
@@ -36,7 +36,7 @@
 
 <div class="fieldcontain ${hasErrors(bean: alumnoInstance, field: 'contrasena', 'error')} required">
 	<label for="contrasena">
-		<g:message code="alumno.contrasena.label" default="Contrasena" />
+		<g:message code="alumno.contrasena.label" default="Contraseña" />
 		<span class="required-indicator">*</span>
 	</label>
 	<g:textField name="contrasena" required="" value="${alumnoInstance?.contrasena}"/>

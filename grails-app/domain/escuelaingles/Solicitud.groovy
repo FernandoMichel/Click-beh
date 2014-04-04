@@ -1,7 +1,7 @@
 package escuelaingles
 
 class Solicitud {
-    static hasOne=[profesor:Profesor, curso:Curso]
+    //static hasOne=[profesor:Profesor, curso:Curso]
         
     static constraints = {
     }
