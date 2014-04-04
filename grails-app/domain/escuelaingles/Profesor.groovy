@@ -7,6 +7,7 @@ class Profesor {
     String contrasena
     String correo
     
+    Object certificado
     
     static hasMany=[cursos:Curso]
 
@@ -18,6 +19,6 @@ class Profesor {
         contrasena blank : false
         correo blank : false
         correo unique : true
-        
+        certificado blank : true
     }
 }
