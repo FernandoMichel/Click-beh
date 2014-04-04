@@ -7,7 +7,8 @@ class Curso {
     static hasMany=[inscripciones:Inscripcion]
     static belongsTo=[profesor:Profesor]
     static constraints = {
-        nivel (blank: false, inList ("Principiante","Intermedio","Avanzado","Conversacion"))
+        nivel blank: false 
+        nivel inList ("Principiante","Intermedio","Avanzado","Conversacion")
         horario blank: false
     }
 }
