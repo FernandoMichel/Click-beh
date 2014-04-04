@@ -1,9 +1,9 @@
 package escuelaingles
 
 class Inscripcion {
+    static belongsTo=[alumno:Alumno, curso:Curso    ]
     
-    static belongsTo=[curso:Curso, alumno:Alumno]
-
+    
     static constraints = {
     }
 }
