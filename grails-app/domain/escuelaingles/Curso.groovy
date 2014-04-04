@@ -3,6 +3,7 @@ package escuelaingles
 class Curso {
     String nivel
     String horario
+    boolean aceptado
     
     Object video
 
