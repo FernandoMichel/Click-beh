@@ -34,6 +34,8 @@
 					
 						<g:sortableColumn property="contrasena" title="${message(code: 'profesor.contrasena.label', default: 'Contrasena')}" />
 					
+						<g:sortableColumn property="nivel" title="${message(code: 'profesor.nivel.label', default: 'Nivel')}" />
+					
 					</tr>
 				</thead>
 				<tbody>
@@ -49,6 +51,8 @@
 						<td>${fieldValue(bean: profesorInstance, field: "apellm")}</td>
 					
 						<td>${fieldValue(bean: profesorInstance, field: "contrasena")}</td>
+					
+						<td>${fieldValue(bean: profesorInstance, field: "nivel")}</td>
 					
 					</tr>
 				</g:each>

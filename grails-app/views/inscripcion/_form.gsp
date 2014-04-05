@@ -10,11 +10,11 @@
 	<g:select id="alumno" name="alumno.id" from="${escuelaingles.Alumno.list()}" optionKey="id" required="" value="${inscripcionInstance?.alumno?.id}" class="many-to-one"/>
 </div>
 
-<div class="fieldcontain ${hasErrors(bean: inscripcionInstance, field: 'curso', 'error')} required">
-	<label for="curso">
-		<g:message code="inscripcion.curso.label" default="Curso" />
+<div class="fieldcontain ${hasErrors(bean: inscripcionInstance, field: 'profesor', 'error')} required">
+	<label for="profesor">
+		<g:message code="inscripcion.profesor.label" default="Profesor" />
 		<span class="required-indicator">*</span>
 	</label>
-	<g:select id="curso" name="curso.id" from="${escuelaingles.Curso.list()}" optionKey="id" required="" value="${inscripcionInstance?.curso?.id}" class="many-to-one"/>
+	<g:select id="profesor" name="profesor.id" from="${escuelaingles.Profesor.list()}" optionKey="id" required="" value="${inscripcionInstance?.profesor?.id}" class="many-to-one"/>
 </div>
 

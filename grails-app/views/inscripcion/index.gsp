@@ -26,7 +26,7 @@
 					
 						<th><g:message code="inscripcion.alumno.label" default="Alumno" /></th>
 					
-						<th><g:message code="inscripcion.curso.label" default="Curso" /></th>
+						<th><g:message code="inscripcion.profesor.label" default="Profesor" /></th>
 					
 					</tr>
 				</thead>
@@ -36,7 +36,7 @@
 					
 						<td><g:link action="show" id="${inscripcionInstance.id}">${fieldValue(bean: inscripcionInstance, field: "alumno")}</g:link></td>
 					
-						<td>${fieldValue(bean: inscripcionInstance, field: "curso")}</td>
+						<td>${fieldValue(bean: inscripcionInstance, field: "profesor")}</td>
 					
 					</tr>
 				</g:each>

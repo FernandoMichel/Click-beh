@@ -42,20 +42,27 @@
 	<g:textField name="contrasena" required="" value="${profesorInstance?.contrasena}"/>
 </div>
 
-<div class="fieldcontain ${hasErrors(bean: profesorInstance, field: 'cursos', 'error')} ">
-	<label for="cursos">
-		<g:message code="profesor.cursos.label" default="Cursos" />
+<div class="fieldcontain ${hasErrors(bean: profesorInstance, field: 'nivel', 'error')} required">
+	<label for="nivel">
+		<g:message code="profesor.nivel.label" default="Nivel" />
+		<span class="required-indicator">*</span>
+	</label>
+	<g:select name="nivel" from="${profesorInstance.constraints.nivel.inList}" required="" value="${profesorInstance?.nivel}" valueMessagePrefix="profesor.nivel"/>
+</div>
+
+<div class="fieldcontain ${hasErrors(bean: profesorInstance, field: 'horario', 'error')} required">
+	<label for="horario">
+		<g:message code="profesor.horario.label" default="Horario" />
+		<span class="required-indicator">*</span>
+	</label>
+	<g:textField name="horario" required="" value="${profesorInstance?.horario}"/>
+</div>
+
+<div class="fieldcontain ${hasErrors(bean: profesorInstance, field: 'aceptado', 'error')} ">
+	<label for="aceptado">
+		<g:message code="profesor.aceptado.label" default="Aceptado" />
 		
 	</label>
-	
-<ul class="one-to-many">
-<g:each in="${profesorInstance?.cursos?}" var="c">
-    <li><g:link controller="curso" action="show" id="${c.id}">${c?.encodeAsHTML()}</g:link></li>
-</g:each>
-<li class="add">
-<g:link controller="curso" action="create" params="['profesor.id': profesorInstance?.id]">${message(code: 'default.add.label', args: [message(code: 'curso.label', default: 'Curso')])}</g:link>
-</li>
-</ul>
-
+	<g:checkBox name="aceptado" value="${profesorInstance?.aceptado}" />
 </div>
 

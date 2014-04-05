@@ -68,13 +68,29 @@
 				</li>
 				</g:if>
 			
-				<g:if test="${profesorInstance?.cursos}">
+				<g:if test="${profesorInstance?.nivel}">
 				<li class="fieldcontain">
-					<span id="cursos-label" class="property-label"><g:message code="profesor.cursos.label" default="Cursos" /></span>
+					<span id="nivel-label" class="property-label"><g:message code="profesor.nivel.label" default="Nivel" /></span>
 					
-						<g:each in="${profesorInstance.cursos}" var="c">
-						<span class="property-value" aria-labelledby="cursos-label"><g:link controller="curso" action="show" id="${c.id}">${c?.encodeAsHTML()}</g:link></span>
-						</g:each>
+						<span class="property-value" aria-labelledby="nivel-label"><g:fieldValue bean="${profesorInstance}" field="nivel"/></span>
+					
+				</li>
+				</g:if>
+			
+				<g:if test="${profesorInstance?.horario}">
+				<li class="fieldcontain">
+					<span id="horario-label" class="property-label"><g:message code="profesor.horario.label" default="Horario" /></span>
+					
+						<span class="property-value" aria-labelledby="horario-label"><g:fieldValue bean="${profesorInstance}" field="horario"/></span>
+					
+				</li>
+				</g:if>
+			
+				<g:if test="${profesorInstance?.aceptado}">
+				<li class="fieldcontain">
+					<span id="aceptado-label" class="property-label"><g:message code="profesor.aceptado.label" default="Aceptado" /></span>
+					
+						<span class="property-value" aria-labelledby="aceptado-label"><g:formatBoolean boolean="${profesorInstance?.aceptado}" /></span>
 					
 				</li>
 				</g:if>

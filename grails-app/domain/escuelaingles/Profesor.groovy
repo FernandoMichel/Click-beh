@@ -8,8 +8,11 @@ class Profesor {
     String correo
     
     Object certificado
+    String nivel
+    String horario
+    Object video
     
-    static hasMany=[cursos:Curso]
+    boolean aceptado
 
     static constraints = {
         correo blank : false
@@ -20,5 +23,9 @@ class Profesor {
         correo blank : false
         correo unique : true
         certificado blank : true
+        nivel blank: false 
+        nivel inList: ["Principiante","Intermedio","Avanzado","Conversacion"]
+        horario blank: false
+        video blank: true
     }
 }
