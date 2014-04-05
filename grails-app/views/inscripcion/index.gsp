@@ -24,6 +24,8 @@
 			<thead>
 					<tr>
 					
+						<g:sortableColumn property="aceptado" title="${message(code: 'inscripcion.aceptado.label', default: 'Aceptado')}" />
+					
 						<th><g:message code="inscripcion.alumno.label" default="Alumno" /></th>
 					
 						<th><g:message code="inscripcion.profesor.label" default="Profesor" /></th>
@@ -34,7 +36,9 @@
 				<g:each in="${inscripcionInstanceList}" status="i" var="inscripcionInstance">
 					<tr class="${(i % 2) == 0 ? 'even' : 'odd'}">
 					
-						<td><g:link action="show" id="${inscripcionInstance.id}">${fieldValue(bean: inscripcionInstance, field: "alumno")}</g:link></td>
+						<td><g:link action="show" id="${inscripcionInstance.id}">${fieldValue(bean: inscripcionInstance, field: "aceptado")}</g:link></td>
+					
+						<td>${fieldValue(bean: inscripcionInstance, field: "alumno")}</td>
 					
 						<td>${fieldValue(bean: inscripcionInstance, field: "profesor")}</td>
 					

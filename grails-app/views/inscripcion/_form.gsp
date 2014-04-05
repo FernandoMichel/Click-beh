@@ -2,6 +2,14 @@
 
 
 
+<div class="fieldcontain ${hasErrors(bean: inscripcionInstance, field: 'aceptado', 'error')} ">
+	<label for="aceptado">
+		<g:message code="inscripcion.aceptado.label" default="Aceptado" />
+		
+	</label>
+	<g:checkBox name="aceptado" value="${inscripcionInstance?.aceptado}" />
+</div>
+
 <div class="fieldcontain ${hasErrors(bean: inscripcionInstance, field: 'alumno', 'error')} required">
 	<label for="alumno">
 		<g:message code="inscripcion.alumno.label" default="Alumno" />

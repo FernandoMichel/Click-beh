@@ -44,15 +44,15 @@
 					
 						<td><g:link action="show" id="${alumnoInstance.id}">${fieldValue(bean: alumnoInstance, field: "correo")}</g:link></td>
 					
-						<td>${fieldValue(bean: alumnoInstance, field: "Nombre")}</td>
+						<td>${fieldValue(bean: alumnoInstance, field: "nombre")}</td>
 					
-						<td>${fieldValue(bean: alumnoInstance, field: "Apellido Paterno")}</td>
+						<td>${fieldValue(bean: alumnoInstance, field: "apellp")}</td>
 					
-						<td>${fieldValue(bean: alumnoInstance, field: "Apellido Materno")}</td>
+						<td>${fieldValue(bean: alumnoInstance, field: "apellm")}</td>
 					
-						<td>${fieldValue(bean: alumnoInstance, field: "Contraseña")}</td>
+						<td>${fieldValue(bean: alumnoInstance, field: "contrasena")}</td>
 					
-						<td>${fieldValue(bean: alumnoInstance, field: "Teléfono")}</td>
+						<td>${fieldValue(bean: alumnoInstance, field: "telefono")}</td>
 					
 					</tr>
 				</g:each>

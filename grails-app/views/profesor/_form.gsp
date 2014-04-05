@@ -20,7 +20,7 @@
 
 <div class="fieldcontain ${hasErrors(bean: profesorInstance, field: 'apellp', 'error')} required">
 	<label for="apellp">
-		<g:message code="profesor.apellp.label" default="Apellp" />
+		<g:message code="profesor.apellp.label" default="Apellido Paterno" />
 		<span class="required-indicator">*</span>
 	</label>
 	<g:textField name="apellp" required="" value="${profesorInstance?.apellp}"/>
@@ -28,7 +28,7 @@
 
 <div class="fieldcontain ${hasErrors(bean: profesorInstance, field: 'apellm', 'error')} required">
 	<label for="apellm">
-		<g:message code="profesor.apellm.label" default="Apellm" />
+		<g:message code="profesor.apellm.label" default="Apellido Materno" />
 		<span class="required-indicator">*</span>
 	</label>
 	<g:textField name="apellm" required="" value="${profesorInstance?.apellm}"/>
@@ -36,7 +36,7 @@
 
 <div class="fieldcontain ${hasErrors(bean: profesorInstance, field: 'contrasena', 'error')} required">
 	<label for="contrasena">
-		<g:message code="profesor.contrasena.label" default="Contrasena" />
+		<g:message code="profesor.contrasena.label" default="Contraseña" />
 		<span class="required-indicator">*</span>
 	</label>
 	<g:textField name="contrasena" required="" value="${profesorInstance?.contrasena}"/>
@@ -56,13 +56,5 @@
 		<span class="required-indicator">*</span>
 	</label>
 	<g:textField name="horario" required="" value="${profesorInstance?.horario}"/>
-</div>
-
-<div class="fieldcontain ${hasErrors(bean: profesorInstance, field: 'aceptado', 'error')} ">
-	<label for="aceptado">
-		<g:message code="profesor.aceptado.label" default="Aceptado" />
-		
-	</label>
-	<g:checkBox name="aceptado" value="${profesorInstance?.aceptado}" />
 </div>
 

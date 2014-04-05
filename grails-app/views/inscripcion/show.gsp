@@ -23,6 +23,15 @@
 			</g:if>
 			<ol class="property-list inscripcion">
 			
+				<g:if test="${inscripcionInstance?.aceptado}">
+				<li class="fieldcontain">
+					<span id="aceptado-label" class="property-label"><g:message code="inscripcion.aceptado.label" default="Aceptado" /></span>
+					
+						<span class="property-value" aria-labelledby="aceptado-label"><g:formatBoolean boolean="${inscripcionInstance?.aceptado}" /></span>
+					
+				</li>
+				</g:if>
+			
 				<g:if test="${inscripcionInstance?.alumno}">
 				<li class="fieldcontain">
 					<span id="alumno-label" class="property-label"><g:message code="inscripcion.alumno.label" default="Alumno" /></span>
