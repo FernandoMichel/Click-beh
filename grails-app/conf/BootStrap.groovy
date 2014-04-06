@@ -37,7 +37,6 @@ class BootStrap {
         if(inscPrueba.hasErrors()){
             println inscPrueba.errors
         }
-
     }
     def destroy = {
     }

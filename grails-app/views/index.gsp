@@ -50,6 +50,7 @@
 		</style>
 	</head>
 	<body>
+            
 		<a href="#page-body" class="skip"><g:message code="default.link.skip.label" default="Skip to content&hellip;"/></a>
 		<div id="page-body" role="main">
 			<h1>Bienvenido</h1>
@@ -65,6 +66,9 @@
 			</div>
                         <div>
                             <g:link controller="profesor" action="verCursosVisitante">Ver Cursos</g:link>
+                        </div>
+                        <div>
+                            <g:link controller="inscripcion" action="solicitudesDeInscripcion">Solicitudes de inscripcion</g:link>
                         </div>
 		</div>
 	</body>

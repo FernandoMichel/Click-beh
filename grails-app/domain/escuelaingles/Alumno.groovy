@@ -22,4 +22,7 @@ class Alumno {
         telefono blank : false
         
     }
+    String toString(){
+        return nombre+" "+apellp+" "+apellm
+    }
 }

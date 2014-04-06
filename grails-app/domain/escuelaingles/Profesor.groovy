@@ -28,4 +28,7 @@ class Profesor {
         horario blank: false
         video blank: true
     }
+    String toString(){
+        return nombre+" "+apellp+" "+apellm
+    }
 }

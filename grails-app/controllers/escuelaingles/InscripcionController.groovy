@@ -1,7 +1,5 @@
 package escuelaingles
 
-
-
 import static org.springframework.http.HttpStatus.*
 import grails.transaction.Transactional
 
@@ -14,7 +12,11 @@ class InscripcionController {
         params.max = Math.min(max ?: 10, 100)
         respond Inscripcion.list(params), model:[inscripcionInstanceCount: Inscripcion.count()]
     }
-
+    def solicitudesDeInscripcion(Integer max) {
+        params.max = Math.min(max ?: 10, 100)
+        respond Inscripcion.list(params), model:[inscripcionInstanceCount: Inscripcion.count()]
+    }
+ 
     def show(Inscripcion inscripcionInstance) {
         respond inscripcionInstance
     }
@@ -91,7 +93,20 @@ class InscripcionController {
             '*'{ render status: NO_CONTENT }
         }
     }
-
+   
+    @Transactional
+    def rechazar(Inscripcion inscripcionInstance) {
+        inscripcionInstance.delete flush:true
+        redirect action:"solicitudesDeInscripcion"
+    }
+   
+    @Transactional
+    def aceptar(Inscripcion inscripcionInstance) {
+        inscripcionInstance.aceptado=true
+        inscripcionInstance.save flush:true
+        redirect action:"solicitudesDeInscripcion"
+    }
+    
     protected void notFound() {
         request.withFormat {
             form {
