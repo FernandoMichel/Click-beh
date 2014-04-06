@@ -63,6 +63,9 @@
 					</g:each>
 				</ul>
 			</div>
+                        <div>
+                            <g:link controller="profesor" action="verCursosVisitante">Ver Cursos</g:link>
+                        </div>
 		</div>
 	</body>
 </html>

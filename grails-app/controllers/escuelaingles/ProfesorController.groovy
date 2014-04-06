@@ -15,6 +15,11 @@ class ProfesorController {
         respond Profesor.list(params), model:[profesorInstanceCount: Profesor.count()]
     }
 
+    def verCursosVisitante(Integer max) {
+        params.max = Math.min(max ?: 10, 100)
+        respond Profesor.list(params), model:[profesorInstanceCount: Profesor.count()]
+    }
+
     def show(Profesor profesorInstance) {
         respond profesorInstance
     }

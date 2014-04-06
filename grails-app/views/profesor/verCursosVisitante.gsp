@@ -23,29 +23,31 @@
 			<thead>
 					<tr>
 					
-						<g:sortableColumn property="nombre" title="${message(code: 'profesor.nombre.label', default: 'Nombre')}" />
-					
-						<g:sortableColumn property="apellp" title="${message(code: 'profesor.apellp.label', default: 'Apellido Paterno')}" />
-					
-						<g:sortableColumn property="apellm" title="${message(code: 'profesor.apellm.label', default: 'Apellido Materno')}" />
-					
 						<g:sortableColumn property="nivel" title="${message(code: 'profesor.nivel.label', default: 'Nivel')}" />
 					
+						<g:sortableColumn property="horario" title="${message(code: 'profesor.nivel.label', default: 'Horario')}" />
+					
+						<g:sortableColumn property="nombre" title="${message(code: 'profesor.nombre.label', default: 'Profesor')}" />
+
 					</tr>
 				</thead>
 				<tbody>
 				<g:each in="${profesorInstanceList}" status="i" var="profesorInstance">
+                                    <g:if test="${profesorInstance.aceptado}">
 					<tr class="${(i % 2) == 0 ? 'even' : 'odd'}">
-					
-						<td><g:link action="show" id="${profesorInstance.id}">${fieldValue(bean: profesorInstance, field: "nombre")}</g:link></td>
-					
-						<td>${fieldValue(bean: profesorInstance, field: "apellp")}</td>
-					
-						<td>${fieldValue(bean: profesorInstance, field: "apellm")}</td>
 					
 						<td>${fieldValue(bean: profesorInstance, field: "nivel")}</td>
 					
+						<td>${fieldValue(bean: profesorInstance, field: "horario")}</td>
+					
+						<td>${fieldValue(bean: profesorInstance, field: "nombre")}
+					
+						${fieldValue(bean: profesorInstance, field: "apellp")}
+					
+						${fieldValue(bean: profesorInstance, field: "apellm")}</td>
+					
 					</tr>
+                                    </g:if>
 				</g:each>
 				</tbody>
 			</table>
