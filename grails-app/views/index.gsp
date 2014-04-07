@@ -56,8 +56,19 @@
 			<h1>Bienvenido</h1>
 			<p>En esta página podrás inscribirte a cursos personales de inglés, o registrarte como profesor para dar clases tu mismo</p>
 
-			<div id="controller-list" role="navigation">
-				<h2>Available Controllers:</h2>
+			<div id="controller-list" role="navigation" align = "center">
+                                <br>
+                                <form>
+           
+                                Correo: <input type="text" name="yourname@correo"><br><br>
+                                Contraseña: <input type="text" name="*******">
+                                <br>
+                                <br>
+                                <g:actionSubmit controller = "sesion" action="iniciarSesionAlumno" value="${message(code: ' ', default: 'Entrar')}" />
+                                
+                                </form>
+                                <br>
+                                <h2>Available Controllers:</h2>
 				<ul>
 					<g:each var="c" in="${grailsApplication.controllerClasses.sort { it.fullName } }">
 						<li class="controller"><g:link controller="${c.logicalPropertyName}">${c.fullName}</g:link></li>

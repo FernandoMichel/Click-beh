@@ -23,10 +23,6 @@ class AlumnoController {
         respond new Alumno(params)
     }
     
-    def entrarSistema(String corre, String contrasena){
-        
-    }
-    
 
     @Transactional
     def save(Alumno alumnoInstance) {
