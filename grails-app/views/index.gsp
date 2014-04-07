@@ -70,6 +70,9 @@
                         <div>
                             <g:link controller="inscripcion" action="solicitudesDeInscripcion">Solicitudes de inscripcion</g:link>
                         </div>
+                        <div>
+                            <g:link controller="profesor" action="verCursosAlumno">Inscribir</g:link>
+                        </div>
 		</div>
 	</body>
 </html>

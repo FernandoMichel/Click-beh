@@ -1,7 +1,5 @@
 package escuelaingles
 
-
-
 import static org.springframework.http.HttpStatus.*
 import grails.transaction.Transactional
 
@@ -16,6 +14,11 @@ class ProfesorController {
     }
 
     def verCursosVisitante(Integer max) {
+        params.max = Math.min(max ?: 10, 100)
+        respond Profesor.list(params), model:[profesorInstanceCount: Profesor.count()]
+    }
+
+    def verCursosAlumno(Integer max) {
         params.max = Math.min(max ?: 10, 100)
         respond Profesor.list(params), model:[profesorInstanceCount: Profesor.count()]
     }
@@ -105,5 +108,19 @@ class ProfesorController {
             }
             '*'{ render status: NOT_FOUND }
         }
+    }
+    
+    @Transactional
+    def inscribir(Profesor profesorInstance){
+            Inscripcion inscrip=new Inscripcion(
+            alumno: session.user, //se asume que si un usuario esta intentando una inscripcion, netonces ha iniciado sesion como alumno
+            profesor: profesorInstance,
+            aceptado: false
+        )
+        inscrip.save flush:true
+        if(inscrip.hasErrors()){
+            println inscrip.errors
+        }
+        redirect action:"verCursosAlumno"
     }
 }
