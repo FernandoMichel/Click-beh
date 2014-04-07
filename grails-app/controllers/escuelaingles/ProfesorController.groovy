@@ -22,6 +22,10 @@ class ProfesorController {
         params.max = Math.min(max ?: 10, 100)
         respond Profesor.list(params), model:[profesorInstanceCount: Profesor.count()]
     }
+    
+    def entrarSistema(String correo, String contrasena){
+        
+    }
 
     def show(Profesor profesorInstance) {
         respond profesorInstance

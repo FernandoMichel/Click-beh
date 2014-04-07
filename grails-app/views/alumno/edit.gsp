@@ -1,4 +1,4 @@
-<%@ page import="escuelaingles.Alumno" %>
+    <%@ page import="escuelaingles.Alumno" %>
 <!DOCTYPE html>
 <html>
 	<head>
