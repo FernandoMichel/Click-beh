@@ -65,9 +65,6 @@
 		</style>
 	</head>
 	<body>
-            
-            <g:form url="[action:'iniciar',controller:'ses']" >
-            
 		<a href="#page-body" class="skip"><g:message code="default.link.skip.label" default="Skip to content&hellip;"/></a>
 		<div id="page-body" role="main" >
                         <div align ="right" id="r1">
@@ -75,7 +72,7 @@
                             <g:link controller="inscripcion" action="solicitudesDeInscripcion">Solicitudes de inscripcion</g:link>
                             <g:link controller="profesor" action="verCursosAlumno">Inscribir</g:link>
                             <g:link controller="profesor" action="verificarDatosProfesor">Verificar datos profesor</g:link>
-                        
+                            <g:link controller="ses" action="iniciarSesion">Iniciar Sesion</g:link>
                         </div>
                     <h1>Bienvenido</h1>
 			<p>En esta página podrás inscribirte a cursos personales de inglés, o registrarte como profesor para dar clases tu mismo</p>
@@ -84,34 +81,7 @@
                             
                                 <br>
                                 
-
-                                       <table class="userForm">
-                                        <tr class='prop'>
-                                            <td valign='top' style='text-align:left;' width='20%'>
-                                    <label for='email'>Correo:</label>
- </td>
-<td valign='top' style='text-align:left;' width='80%'>
- <input id="email" type='text' name='email' value='${user?.email}' />
- </td>
- </tr>
- <tr class='prop'>
- <td valign='top' style='text-align:left;' width='20%'>
- <label for='password'>Password:</label>
- </td>
-<td valign='top' style='text-align:left;' width='80%'>
-<input id="password" type='password' name='password'value='${user?.password}' />
- </td>
- </tr>
- 
- </table> 
- </div>
- <div class="buttons">
- <span class="formButton">
- <input type="submit" value="Iniciar"></input>
- </span>
- </div>
-
-                                
+                  
                                 
                                 <br>
                                 <h2>Available Controllers:</h2>
@@ -123,8 +93,5 @@
 			</div>
                         
 		</div>
-                
-                </g:form>
-                
 	</body>
 </html>

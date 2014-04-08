@@ -53,6 +53,7 @@
 
 				#page-body {
 					margin: 0 1em 1em;
+                                        color = "white";
                         
 				}
 
@@ -66,64 +67,22 @@
 	</head>
 	<body>
             
-            <g:form url="[action:'iniciar',controller:'ses']" >
-            
+        <g:form url="[action:'iniciarUsuario',controller:'ses']" >   
 		<a href="#page-body" class="skip"><g:message code="default.link.skip.label" default="Skip to content&hellip;"/></a>
 		<div id="page-body" role="main" >
-                        <div align ="right" id="r1">
-                            <g:link controller="profesor" action="verCursosVisitante">Ver Cursos</g:link>
-                            <g:link controller="inscripcion" action="solicitudesDeInscripcion">Solicitudes de inscripcion</g:link>
-                            <g:link controller="profesor" action="verCursosAlumno">Inscribir</g:link>
-                            <g:link controller="profesor" action="verificarDatosProfesor">Verificar datos profesor</g:link>
-                        
-                        </div>
-                    <h1>Bienvenido</h1>
-			<p>En esta página podrás inscribirte a cursos personales de inglés, o registrarte como profesor para dar clases tu mismo</p>
-                        
-                        
-                            
-                                <br>
-                                
-
-                                       <table class="userForm">
-                                        <tr class='prop'>
-                                            <td valign='top' style='text-align:left;' width='20%'>
-                                    <label for='email'>Correo:</label>
- </td>
-<td valign='top' style='text-align:left;' width='80%'>
- <input id="email" type='text' name='email' value='${user?.email}' />
- </td>
- </tr>
- <tr class='prop'>
- <td valign='top' style='text-align:left;' width='20%'>
- <label for='password'>Password:</label>
- </td>
-<td valign='top' style='text-align:left;' width='80%'>
-<input id="password" type='password' name='password'value='${user?.password}' />
- </td>
- </tr>
- 
- </table> 
- </div>
- <div class="buttons">
- <span class="formButton">
- <input type="submit" value="Iniciar"></input>
- </span>
- </div>
-
-                                
-                                
-                                <br>
-                                <h2>Available Controllers:</h2>
-				<ul>
-					<g:each var="c" in="${grailsApplication.controllerClasses.sort { it.fullName } }">
-						<li class="controller"><g:link controller="${c.logicalPropertyName}">${c.fullName}</g:link></li>
-					</g:each>
-				</ul>
-			</div>
-                        
-		</div>
+                <br>
                 
+                
+                <td valign='top' style='text-align:right;' width='20'>
+                    Correo: <input type="text" name="email" value="${user?.correo}" tabindex="right"><br>
+                    <br>
+                    Password: <input type="text" name="correo" value="${user?.contrasena}">
+                    <br>
+                    <br>    
+                    <input type="submit" value="Iniciar"></input>
+                </td>      
+                </div>
+                         
                 </g:form>
                 
 	</body>

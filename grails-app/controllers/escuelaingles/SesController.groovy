@@ -6,7 +6,7 @@ class SesController {
     }
     
     
-    def iniciar(){
+    def iniciarUsuario(){
          def encontrado = Alumno.findWhere(correo:params['correo'],contrasena:params['contrasena'])
          session.user = encontrado
         if (encontrado){
@@ -16,5 +16,10 @@ class SesController {
         }
         
     }
+    
+    def iniciarSesion(){
+        redirect action: "index"
+    }
+    
     
 }
