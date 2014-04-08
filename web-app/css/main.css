@@ -51,8 +51,10 @@ body {
 }
 
 #grailsLogo {
-	width: 20px;
-        height: 10px;
+        
+	width:400em;
+        height: 8em;
+        background-color:black;
         
       
 }
@@ -96,7 +98,7 @@ img {
 /* GENERAL */
 
 #grailsLogo a {
-	display: inline-block;
+	
 	margin: 1em;
         width:20px;
         
