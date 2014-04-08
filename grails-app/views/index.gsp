@@ -4,6 +4,7 @@
 		<meta name="layout" content="main" charset="UTF-8"/>
 		<title>Escuela</title>
 		<style type="text/css" media="screen">
+                    
                         body {
                             background: -webkit-linear-gradient(#F01E1E, #F01E1E);
                             background: -moz-linear-gradient(#F01E1E, #F01E1E);
@@ -12,7 +13,7 @@
                         }
                         r1{
                             font-style:italic;
-                            color:white;
+                           
                         }
                         
                      
@@ -71,6 +72,8 @@
                             <g:link controller="profesor" action="verCursosVisitante">Ver Cursos</g:link>
                             <g:link controller="inscripcion" action="solicitudesDeInscripcion">Solicitudes de inscripcion</g:link>
                             <g:link controller="profesor" action="verCursosAlumno">Inscribir</g:link>
+                            <g:link controller="profesor" action="verificarDatosProfesor">Verificar datos profesor</g:link>
+                        
                         </div>
                     <h1>Bienvenido</h1>
 			<p>En esta página podrás inscribirte a cursos personales de inglés, o registrarte como profesor para dar clases tu mismo</p>

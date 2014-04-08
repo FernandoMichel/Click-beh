@@ -22,6 +22,11 @@ class ProfesorController {
         params.max = Math.min(max ?: 10, 100)
         respond Profesor.list(params), model:[profesorInstanceCount: Profesor.count()]
     }
+
+    def verificarDatosProfesor(Integer max) {
+        params.max = Math.min(max ?: 10, 100)
+        respond Profesor.list(params), model:[profesorInstanceCount: Profesor.count()]
+    }
     
     def entrarSistema(String correo, String contrasena){
         
@@ -126,5 +131,18 @@ class ProfesorController {
             println inscrip.errors
         }
         redirect action:"verCursosAlumno"
+    }
+   
+    @Transactional
+    def rechazar(Profesor profesorInstance) {
+        profesorInstance.delete flush:true
+        redirect action:"verificarDatosProfesor"
+    }
+   
+    @Transactional
+    def aceptar(Profesor profesorInstance) {
+        profesorInstance.aceptado=true
+        profesorInstance.save flush:true
+        redirect action:"verificarDatosProfesor"
     }
 }
