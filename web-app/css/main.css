@@ -52,9 +52,11 @@ body {
 
 #grailsLogo {
         
-	width:400em;
-        height: 8em;
-        background-color:black;
+	width:60em;
+        height: 10em;
+        background: -webkit-linear-gradient(blue, #F01E1E);
+        background: -moz-linear-gradient(blue, #F01E1E);
+        background: -o-linear-gradient(blue, #F01E1E);
         
       
 }
