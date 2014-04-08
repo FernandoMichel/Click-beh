@@ -20,7 +20,7 @@
 	</head>
 	<body>
             
-            <div id="grailsLogo" role="banner"><a href="http://grails.org"><img src="${resource(dir: 'images', file: 'click-beh.png')}" alt="Grails" width="100" height="100"/></a></div>
+            <div id="grailsLogo" role="banner"><a href="http://grails.org"><img src="${resource(dir: 'images', file: 'click-beh.png')}" alt="Grails" width="200" height="150"/></a></div>
             <br>
             <br>
             <br>
