@@ -19,7 +19,14 @@
 		<r:layoutResources />
 	</head>
 	<body>
-		<div id="grailsLogo" role="banner"><a href="http://grails.org"><img src="${resource(dir: 'images', file: 'click-beh.png')}" alt="Grails"/></a></div>
+            
+            <div id="grailsLogo" role="banner"><a href="http://grails.org"><img src="${resource(dir: 'images', file: 'click-beh.png')}" alt="Grails" width="100" height="100"/></a></div>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
 		<g:layoutBody/>
 		<div class="footer" role="contentinfo"></div>
 		<div id="spinner" class="spinner" style="display:none;"><g:message code="spinner.alt" default="Loading&hellip;"/></div>

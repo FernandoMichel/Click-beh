@@ -52,7 +52,7 @@
 	<body>
             
 		<a href="#page-body" class="skip"><g:message code="default.link.skip.label" default="Skip to content&hellip;"/></a>
-		<div id="page-body" role="main">
+		<div id="page-body" role="main" >
 			<h1>Bienvenido</h1>
 			<p>En esta página podrás inscribirte a cursos personales de inglés, o registrarte como profesor para dar clases tu mismo</p>
 
@@ -75,13 +75,13 @@
 					</g:each>
 				</ul>
 			</div>
-                        <div>
+                        <div align ="center">
                             <g:link controller="profesor" action="verCursosVisitante">Ver Cursos</g:link>
                         </div>
-                        <div>
+                        <div align = "center">
                             <g:link controller="inscripcion" action="solicitudesDeInscripcion">Solicitudes de inscripcion</g:link>
                         </div>
-                        <div>
+                        <div align="center">
                             <g:link controller="profesor" action="verCursosAlumno">Inscribir</g:link>
                         </div>
 		</div>

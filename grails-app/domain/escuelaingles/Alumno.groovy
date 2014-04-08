@@ -16,7 +16,7 @@ class Alumno {
         nombre blank : false
         apellp blank : false
         apellm blank : false
-        contrasena blank : false
+        contrasena email : false
         correo blank : false
         correo unique : true
         telefono blank : false
