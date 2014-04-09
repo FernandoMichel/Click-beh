@@ -74,9 +74,9 @@
                 
                 
                 <td valign='top' style='text-align:right;' width='20'>
-                    Correo: <input type="text" name="email" value="${user?.correo}" tabindex="right"><br>
+                    Correo: <input type="text" name="correo" value="${user?.correo}" tabindex="right"><br>
                     <br>
-                    Password: <input type="text" name="correo" value="${user?.contrasena}">
+                    Password: <input type="password" name="contrasena" value="${user?.contrasena}">
                     <br>
                     <br>    
                     <input type="submit" value="Iniciar"></input>
