@@ -30,7 +30,7 @@
 				</thead>
 				<tbody>
 				<g:each in="${inscripcionInstanceList}" status="i" var="inscripcionInstance">
-                                    <g:if test="${session.user == inscripcionInstance.profesor && inscripcionInstance.aceptado==false}">
+                                    <g:if test="${session.user.correo == inscripcionInstance.profesor.correo && inscripcionInstance.aceptado==false}">
 					<tr class="${(i % 2) == 0 ? 'even' : 'odd'}">
                                             
                                                 <td>${fieldValue(bean: inscripcionInstance, field: "alumno")}</td>

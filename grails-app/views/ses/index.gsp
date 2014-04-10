@@ -6,9 +6,7 @@
 		<style type="text/css" media="screen">
                     
                         body {
-                            background: -webkit-linear-gradient(#F01E1E, #F01E1E);
-                            background: -moz-linear-gradient(#F01E1E, #F01E1E);
-                            background: -o-linear-gradient(#F01E1E, #F01E1E);
+                            
         
                         }
                         r1{

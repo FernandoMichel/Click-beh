@@ -6,10 +6,7 @@
 		<style type="text/css" media="screen">
                     
                         body {
-                            background: -webkit-linear-gradient(#F01E1E, #F01E1E);
-                            background: -moz-linear-gradient(#F01E1E, #F01E1E);
-                            background: -o-linear-gradient(#F01E1E, #F01E1E);
-        
+                            
                         }
                         r1{
                             font-style:italic;
@@ -67,13 +64,7 @@
 	<body>
 		<a href="#page-body" class="skip"><g:message code="default.link.skip.label" default="Skip to content&hellip;"/></a>
 		<div id="page-body" role="main" >
-                        <div align ="right" id="r1">
-                            <g:link controller="profesor" action="verCursosVisitante">Ver Cursos</g:link>
-                            <g:link controller="inscripcion" action="solicitudesDeInscripcion">Solicitudes de inscripcion</g:link>
-                            <g:link controller="profesor" action="verCursosAlumno">Inscribir</g:link>
-                            <g:link controller="profesor" action="verificarDatosProfesor">Verificar datos profesor</g:link>
-                            <g:link controller="ses" action="iniciarSesion">Iniciar Sesion</g:link>
-                        </div>
+                        
                     <h1>Bienvenido</h1>
 			<p>En esta página podrás inscribirte a cursos personales de inglés, o registrarte como profesor para dar clases tu mismo</p>
                         
