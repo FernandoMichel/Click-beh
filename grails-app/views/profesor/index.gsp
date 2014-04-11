@@ -8,6 +8,15 @@
 		<title><g:message code="default.list.label" args="[entityName]" /></title>
 	</head>
 	<body>
+            
+             <div id="grailsLogo" role="banner"><a href="http://localhost:8080/EscuelaIngles/"><img src="${resource(dir: 'images', file: 'click-beh.png')}" alt="Grails" width="200" height="150"/></a></div>
+                            <div align="center">
+                            <a href="http://localhost:8080/EscuelaIngles" class="menu"> Inicio </a> 
+                         
+                            
+                            </div>
+                            
+            
 		<a href="#list-profesor" class="skip" tabindex="-1"><g:message code="default.link.skip.label" default="Skip to content&hellip;"/></a>
 		<div class="nav" role="navigation">
 			<ul>

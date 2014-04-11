@@ -21,15 +21,11 @@
 	<body>
             
             <div id="grailsLogo" role="banner"><a href="http://localhost:8080/EscuelaIngles/"><img src="${resource(dir: 'images', file: 'click-beh.png')}" alt="Grails" width="200" height="150"/></a></div>
-                            <div align="center">
-                            <a href="http://localhost:8080/EscuelaIngles" class="menu"> Inicio </a> 
-                            <g:link controller="profesor" action="verCursosVisitante" class="menu">Ver Cursos</g:link>
-                            <g:link controller="inscripcion" action="solicitudesDeInscripcion" class="menu">Solicitudes de inscripcion</g:link>
-                            <g:link controller="profesor" action="verCursosAlumno" class="menu">Inscribir</g:link>
-                            <g:link controller="profesor" action="verificarDatosProfesor" class="menu">Verificar datos profesor</g:link>
-                            <g:link controller="ses" action="iniciarSesion" class="menu">Iniciar Sesion</g:link>
-                            <g:link controller="ses" action="irAOpcion" class="menu">Registro</g:link>
-                            
+                            <div align="right">
+                           <g:if test="${session.user}">
+                                <g:link controller="ses" action="logout" class="menu"> Cerrar sesión </g:link>
+                            </g:if>
+                                
                             </div>
                             
             <br>

@@ -63,14 +63,21 @@
 	</head>
 	<body>
 		<a href="#page-body" class="skip"><g:message code="default.link.skip.label" default="Skip to content&hellip;"/></a>
-		<div id="page-body" role="main" >
+                              <a href="http://localhost:8080/EscuelaIngles" class="menu"> Inicio </a> 
+                                <g:link controller="profesor" action="verCursosVisitante" class="menu">Ver Cursos</g:link>
+                            <!--<g:link controller="inscripcion" action="solicitudesDeInscripcion" class="menu">Solicitudes de inscripcion</g:link>
+                            <g:link controller="profesor" action="verCursosAlumno" class="menu">Inscribir</g:link> 
+                             <g:link controller="profesor" action="verificarDatosProfesor" class="menu">Verificar datos profesor</g:link>-->
+                            <g:link controller="ses" action="iniciarSesion" class="menu">Iniciar Sesion</g:link>
+                            <g:link controller="ses" action="irAOpcion" class="menu">Registro</g:link> 
+                           
+                <div id="page-body" role="main" >
                         
                     <h1>Bienvenido</h1>
 			<p>En esta página podrás inscribirte a cursos personales de inglés, o registrarte como profesor para dar clases tu mismo</p>
                         
                         
-                            
-                              
+                          
 			</div>
                         
 		</div>

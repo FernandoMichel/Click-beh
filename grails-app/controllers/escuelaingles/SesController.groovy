@@ -7,6 +7,10 @@ class SesController {
     def opcionProfesorAlumno() {
     
     }
+    def logout(){
+        session.user=null
+        redirect(uri: " ")
+    }
     
     //Inicia cualquiera tanto profesor y alumno y posiblemente admin
     def iniciarUsuario(){
@@ -27,6 +31,7 @@ class SesController {
                 redirect controller: "Inscripcion",action: "solicitudesDeInscripcion"
             }else{
                 if(params['correo'] == "admin" && params['contrasena'] == "admin"){
+                    session.user="Administrador"
                     redirect controller: "Profesor", action: "verificarDatosProfesor"
                 }else{
                     print "nada encontrado"
