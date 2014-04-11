@@ -28,7 +28,10 @@
                             <g:link controller="profesor" action="verCursosAlumno" class="menu">Inscribir</g:link>
                             <g:link controller="profesor" action="verificarDatosProfesor" class="menu">Verificar datos profesor</g:link>
                             <g:link controller="ses" action="iniciarSesion" class="menu">Iniciar Sesion</g:link>
+                            <g:link controller="ses" action="irAOpcion" class="menu">Registro</g:link>
+                            
                             </div>
+                            
             <br>
 		<g:layoutBody/>
 		<div class="footer" role="contentinfo"></div>

@@ -4,6 +4,9 @@ class SesController {
     
     def index() { 
     }
+    def opcionProfesorAlumno() {
+    
+    }
     
     //Inicia cualquiera tanto profesor y alumno y posiblemente admin
     def iniciarUsuario(){
@@ -33,7 +36,10 @@ class SesController {
         }
         
     }
-    
+    def irAOpcion(){
+       
+        redirect action: "opcionProfesorAlumno"
+    }
     def iniciarSesion(){
         redirect action: "index"
     }

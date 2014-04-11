@@ -33,7 +33,8 @@ class ProfesorController {
     }
 
     def show(Profesor profesorInstance) {
-        respond profesorInstance
+        session.user = profesorInstance
+        redirect controller: "inscripcion", action: "solicitudesDeInscripcion"
     }
 
     def create() {

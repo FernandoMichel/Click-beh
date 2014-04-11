@@ -50,20 +50,5 @@
 	<g:textField name="telefono" required="" value="${alumnoInstance?.telefono}"/>
 </div>
 
-<div class="fieldcontain ${hasErrors(bean: alumnoInstance, field: 'inscripciones', 'error')} ">
-	<label for="inscripciones">
-		<g:message code="alumno.inscripciones.label" default="Inscripciones" />
-		
-	</label>
-	
-<ul class="one-to-many">
-<g:each in="${alumnoInstance?.inscripciones?}" var="i">
-    <li><g:link controller="inscripcion" action="show" id="${i.id}">${i?.encodeAsHTML()}</g:link></li>
-</g:each>
-<li class="add">
-<g:link controller="inscripcion" action="create" params="['alumno.id': alumnoInstance?.id]">${message(code: 'default.add.label', args: [message(code: 'inscripcion.label', default: 'Inscripcion')])}</g:link>
-</li>
-</ul>
 
-</div>
 

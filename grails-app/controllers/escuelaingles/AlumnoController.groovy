@@ -16,7 +16,8 @@ class AlumnoController {
     }
 
     def show(Alumno alumnoInstance) {
-        respond alumnoInstance
+         session.user = alumnoInstance
+        redirect controller: "profesor", action: "verCursosAlumno"
     }
 
     def create() {
