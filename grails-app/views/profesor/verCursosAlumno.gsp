@@ -1,5 +1,6 @@
 
 <%@ page import="escuelaingles.Profesor" %>
+<%@ page import="escuelaingles.Inscripcion" %>
 <!DOCTYPE html>
 <html>
 	<head>
@@ -33,7 +34,8 @@
 				</thead>
 				<tbody>
 				<g:each in="${profesorInstanceList}" status="i" var="profesorInstance">
-                                    <g:if test="${profesorInstance.aceptado}">
+                                    <g:set var="inscripcionInstance" value="${Inscripcion.findWhere(alumno: (session.user), profesor:profesorInstance)}"/>
+                                    <g:if test="${profesorInstance.aceptado && inscripcionInstance==null}">
 					<tr class="${(i % 2) == 0 ? 'even' : 'odd'}">
 					
 						<td>${fieldValue(bean: profesorInstance, field: "nivel")}</td>
@@ -47,7 +49,7 @@
 						${fieldValue(bean: profesorInstance, field: "apellm")}</td>
 					
 						<td><g:form url="[resource:profesorInstance, action:'save']" >
-                                                            <g:actionSubmit action="inscribir" value="${message(code: ' ', default: 'Inscribir')}" />
+                                                            <g:actionSubmit action="inscribir" value="${message(code: ' ', default: 'Inscribir')}" onclick="return confirm('${message(code: ' ', default: '¿Inscribir este curso?')}');" />
                                                     </g:form></td>
 					</tr>
                                     </g:if>

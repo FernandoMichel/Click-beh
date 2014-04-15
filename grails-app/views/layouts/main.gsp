@@ -23,7 +23,8 @@
             <div id="grailsLogo" role="banner"><a href="http://localhost:8080/EscuelaIngles/"><img src="${resource(dir: 'images', file: 'click-beh.png')}" alt="Grails" width="200" height="150"/></a></div>
                             <div align="right">
                            <g:if test="${session.user}">
-                                <g:link controller="ses" action="logout" class="menu"> Cerrar sesión </g:link>
+                               <h1>Identificado como ${session.user  }
+                               <g:link controller="ses" action="logout" class="menu"> Cerrar sesión </g:link></h1>
                             </g:if>
                                 
                             </div>

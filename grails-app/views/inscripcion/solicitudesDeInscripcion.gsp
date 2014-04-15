@@ -36,8 +36,8 @@
                                                 <td>${fieldValue(bean: inscripcionInstance, field: "alumno")}</td>
 					
 						<td><g:form url="[resource:inscripcionInstance, action:'delete']" method="DELETE">
-                                                            <g:actionSubmit action="aceptar" value="${message(code: ' ', default: 'Aceptar')}" onclick="return confirm('${message(code: 'default.button.delete.confirm.message', default: 'Are you sure?')}');" />
-                                                            <g:actionSubmit action="rechazar" value="${message(code: ' ', default: 'Rechazar')}" onclick="return confirm('${message(code: 'default.button.delete.confirm.message', default: 'Are you sure?')}');" />
+                                                            <g:actionSubmit action="aceptar" value="${message(code: ' ', default: 'Aceptar')}" onclick="return confirm('${message(code: ' ', default: '¿Confirma aceptar inscripcion del alumno?')}');" />
+                                                            <g:actionSubmit action="rechazar" value="${message(code: ' ', default: 'Rechazar')}" onclick="return confirm('${message(code: ' ', default: '¿Confirma rechazar inscripcion del alumno?')}');" />
                                                     </g:form>
                                                 </td>
 

@@ -55,7 +55,6 @@
 
 				#page-body h1 {
 					margin-top: 10;
-                                        background-color:black;
 				}
                               
 			}
