@@ -9,13 +9,11 @@
 	</head>
 	<body>
 		<a href="#list-profesor" class="skip" tabindex="-1"><g:message code="default.link.skip.label" default="Skip to content&hellip;"/></a>
-		<div class="nav" role="navigation">
-			<ul>
-				<li><a class="home" href="${createLink(uri: '/')}"><g:message code="default.home.label"/></a></li>
-			</ul>
+		<div align="right">
+                              <a href="http://localhost:8080/EscuelaIngles" class="menu" align="right"> Inicio </a> 
 		</div>
 		<div id="list-profesor" class="content scaffold-list" role="main">
-			<h1><g:message code="default.list.label" args="[entityName]" /></h1>
+			<h1><g:message code=" " default="Cursos disponibles:" /></h1>
 			<g:if test="${flash.message}">
 				<div class="message" role="status">${flash.message}</div>
 			</g:if>

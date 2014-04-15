@@ -64,7 +64,9 @@
 		</style>
 	</head>
 	<body>
-            
+            <div align="right">
+                <a href="http://localhost:8080/EscuelaIngles" class="menu" align="right"> Inicio </a> 
+            </div>
         <g:form url="[action:'iniciarUsuario',controller:'ses']" >   
 		<a href="#page-body" class="skip"><g:message code="default.link.skip.label" default="Skip to content&hellip;"/></a>
 		<div id="page-body" role="main" >
