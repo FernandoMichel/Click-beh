@@ -45,7 +45,7 @@
 						${fieldValue(bean: profesorInstance, field: "apellm")}</td>
 					
 						<td><g:form url="[resource:profesorInstance, action:'save']" >
-                                                            <g:actionSubmit action="inscribir" value="${message(code: ' ', default: 'Inscribir')}" onclick="return confirm('${message(code: ' ', default: '¿Inscribir este curso?')}');" />
+                                                            <g:actionSubmit action="inscribir" value="Inscribir" onclick="return confirm('¿Inscribir el curso de nivel ${profesorInstance.nivel} con el profesor ${profesorInstance}?')" />
                                                     </g:form></td>
 					</tr>
                                     </g:if>

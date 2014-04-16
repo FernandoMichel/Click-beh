@@ -97,6 +97,7 @@ class InscripcionController {
     @Transactional
     def rechazar(Inscripcion inscripcionInstance) {
         inscripcionInstance.delete flush:true
+        flash.message="Se ha rechazado la inscripcion del alumno ${inscripcionInstance.alumno}"
         redirect action:"solicitudesDeInscripcion"
     }
    
@@ -104,6 +105,7 @@ class InscripcionController {
     def aceptar(Inscripcion inscripcionInstance) {
         inscripcionInstance.aceptado=true
         inscripcionInstance.save flush:true
+        flash.message="Se ha aceptado la inscripcion del alumno ${inscripcionInstance.alumno}"
         redirect action:"solicitudesDeInscripcion"
     }
     

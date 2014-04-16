@@ -123,7 +123,7 @@ class ProfesorController {
     @Transactional
     def inscribir(Profesor profesorInstance){
             Inscripcion inscrip=new Inscripcion(
-            alumno: session.user, //se asume que si un usuario esta intentando una inscripcion, netonces ha iniciado sesion como alumno
+            alumno: session.user, //se asume que si un usuario esta intentando una inscripcion, entonces ha iniciado sesion como alumno
             profesor: profesorInstance,
             aceptado: false
         )
@@ -131,12 +131,14 @@ class ProfesorController {
         if(inscrip.hasErrors()){
             println inscrip.errors
         }
+        flash.message="Se ha enviado una solicitud de inscripcion al profesor ${profesorInstance}, en breve se pondrá en contacto contigo"
         redirect action:"verCursosAlumno"
     }
    
     @Transactional
     def rechazar(Profesor profesorInstance) {
         profesorInstance.delete flush:true
+        flash.message="Se ha rechazado el registro del profesor ${profesorInstance}"
         redirect action:"verificarDatosProfesor"
     }
    
@@ -144,6 +146,7 @@ class ProfesorController {
     def aceptar(Profesor profesorInstance) {
         profesorInstance.aceptado=true
         profesorInstance.save flush:true
+        flash.message="Se ha aceptado el registro del profesor ${profesorInstance}"
         redirect action:"verificarDatosProfesor"
     }
 }
