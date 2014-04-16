@@ -39,7 +39,15 @@
 		<g:message code="profesor.contrasena.label" default="Contraseña" />
 		<span class="required-indicator">*</span>
 	</label>
-	<g:textField name="contrasena" required="" value="${profesorInstance?.contrasena}"/>
+	<g:passwordField name="contrasena" required="" value="${profesorInstance?.contrasena}"/>
+</div>
+
+<div class="fieldcontain ${hasErrors(bean: profesorInstance, field: 'confContrasena', 'error')} required">
+	<label for="confContrasena">
+		<g:message code="profesor.confContrasena.label" default="Confirmar Contraseña" />
+		<span class="required-indicator">*</span>
+	</label>
+	<g:passwordField name="confContrasena" required="" value="${profesorInstance?.confContrasena}"/>
 </div>
 
 <div class="fieldcontain ${hasErrors(bean: profesorInstance, field: 'nivel', 'error')} required">

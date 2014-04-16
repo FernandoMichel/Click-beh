@@ -7,6 +7,7 @@ class BootStrap {
         apellp:"de",
         apellm:"prueba",
         contrasena:"pass",
+        confContrasena:"pass",
         correo:"daniel_michel@ciencias.unam.mx",
         nivel:"Principiante",
         horario:"matutino",
@@ -21,6 +22,7 @@ class BootStrap {
         apellp:"de",
         apellm:"prueba",
         contrasena:"pass",
+        confContrasena:"pass",
         correo:"fernando_michel@ciencias.unam.mx",
         telefono:"telefono"
         )
