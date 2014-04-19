@@ -9,7 +9,7 @@
 		<div align="right">
                               <a href="http://localhost:8080/EscuelaIngles" class="menu" align="right"> Inicio </a> 
 		</div>
-		<a href="#create-alumno" class="skip" tabindex="-1"><g:message code="default.link.skip.label" default="Skip to content&hellip;"/></a>
+		<a href="#create-alumno" class="skip" tabindex="-1"></a>
 		
 		<div id="create-alumno" class="content scaffold-create" role="main">
 			<h1><g:message code=" " default="Llena tus datos para ser alumno" /></h1>

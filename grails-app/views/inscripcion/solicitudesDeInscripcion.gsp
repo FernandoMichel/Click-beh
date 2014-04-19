@@ -8,7 +8,7 @@
 		<title><g:message code="default.list.label" args="[entityName]" /></title>
 	</head>
 	<body>
-		<a href="#list-inscripcion" class="skip" tabindex="-1"><g:message code="default.link.skip.label" default="Skip to content&hellip;"/></a>
+		<a href="#list-inscripcion" class="skip" tabindex="-1"></a>
 		<div id="list-inscripcion" class="content scaffold-list" role="main">
 			<h1><g:message code=" " default="Alumnos que solicitan inscripción al curso" /></h1>
 			<g:if test="${flash.message}">

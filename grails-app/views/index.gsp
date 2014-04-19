@@ -5,9 +5,6 @@
 		<title>Escuela</title>
 		<style type="text/css" media="screen">
                     
-                        body {
-                            
-                        }
                         r1{
                             font-style:italic;
                            
@@ -50,7 +47,6 @@
 
 				#page-body {
 					margin: 0 1em 1em;
-                        
 				}
 
 				#page-body h1 {
@@ -61,14 +57,14 @@
 		</style>
 	</head>
 	<body>
-		<a href="#page-body" class="skip"><g:message code="default.link.skip.label" default="Skip to content&hellip;"/></a>
-                              <a href="http://localhost:8080/EscuelaIngles" class="menu"> Inicio </a> 
-                                <g:link controller="profesor" action="verCursosVisitante" class="menu">Ver Cursos</g:link>
+		<a href="#page-body" class="skip" align="right">
+                    <a href="http://localhost:8080/EscuelaIngles" class="menu"> Inicio </a> 
+                        <g:link controller="profesor" action="verCursosVisitante" class="menu">Ver Cursos</g:link>
                             <!--<g:link controller="inscripcion" action="solicitudesDeInscripcion" class="menu">Solicitudes de inscripcion</g:link>
-                            <g:link controller="profesor" action="verCursosAlumno" class="menu">Inscribir</g:link> 
+                           <g:link controller="profesor" action="verCursosAlumno" class="menu">Inscribir</g:link> 
                              <g:link controller="profesor" action="verificarDatosProfesor" class="menu">Verificar datos profesor</g:link>-->
-                            <g:link controller="ses" action="iniciarSesion" class="menu">Iniciar Sesion</g:link>
-                            <g:link controller="ses" action="irAOpcion" class="menu">Registro</g:link> 
+                        <g:link controller="ses" action="iniciarSesion" class="menu">Iniciar Sesion</g:link>
+                        <g:link controller="ses" action="irAOpcion" class="menu">Registro</g:link> 
                            
                 <div id="page-body" role="main" >
                         

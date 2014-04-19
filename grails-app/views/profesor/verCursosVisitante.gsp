@@ -8,7 +8,7 @@
 		<title><g:message code="default.list.label" args="[entityName]" /></title>
 	</head>
 	<body>
-		<a href="#list-profesor" class="skip" tabindex="-1"><g:message code="default.link.skip.label" default="Skip to content&hellip;"/></a>
+		<a href="#list-profesor" class="skip" tabindex="-1">
 		<div align="right">
                               <a href="http://localhost:8080/EscuelaIngles" class="menu" align="right"> Inicio </a> 
 		</div>

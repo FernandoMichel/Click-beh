@@ -8,7 +8,7 @@
 		<title><g:message code="default.list.label" args="[entityName]" /></title>
 	</head>
 	<body>
-		<a href="#list-profesor" class="skip" tabindex="-1"><g:message code="default.link.skip.label" default="Skip to content&hellip;"/></a>
+		<a href="#list-profesor" class="skip" tabindex="-1">
 
 		<div id="list-profesor" class="content scaffold-list" role="main">
 			<h1><g:message code=" " default="Profesores postulados para dar cursos" /></h1>

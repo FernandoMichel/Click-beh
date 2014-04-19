@@ -67,13 +67,10 @@
             <div align="right">
                 <a href="http://localhost:8080/EscuelaIngles" class="menu" align="right"> Inicio </a> 
             </div>
-        <g:form url="[action:'iniciarUsuario',controller:'ses']" >   
-		<a href="#page-body" class="skip"><g:message code="default.link.skip.label" default="Skip to content&hellip;"/></a>
+            <g:form url="[action:'iniciarUsuario',controller:'ses']" >   
 		<div id="page-body" role="main" >
                 <br>
-                
-                
-                <td valign='top' style='text-align:right;' width='20'>
+                <td valign='top' style='text-align:left;' width='50'>
                     Correo: <input type="text" name="correo" value="${user?.correo}" tabindex="right"><br>
                     <br>
                     Password: <input type="password" name="contrasena" value="${user?.contrasena}">
@@ -81,8 +78,7 @@
                     <br>    
                     <input type="submit" value="Iniciar"></input>
                 </td>      
-                </div>
-                         
+                </div>     
                 </g:form>
                 
 	</body>
