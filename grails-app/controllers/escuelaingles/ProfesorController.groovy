@@ -34,6 +34,7 @@ class ProfesorController {
 
     def show(Profesor profesorInstance) {
         session.user = profesorInstance
+         flash.message="Tu cuenta se ha registrado exitosamente"
         redirect controller: "inscripcion", action: "solicitudesDeInscripcion"
     }
 

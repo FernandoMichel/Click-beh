@@ -17,6 +17,7 @@ class AlumnoController {
 
     def show(Alumno alumnoInstance) {
          session.user = alumnoInstance
+         flash.message="Tu cuenta se ha registrado exitosamente"
         redirect controller: "profesor", action: "verCursosAlumno"
     }
 

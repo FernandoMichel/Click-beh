@@ -31,8 +31,8 @@
                                                 <td>${fieldValue(bean: inscripcionInstance, field: "alumno")}</td>
 					
 						<td><g:form url="[resource:inscripcionInstance, action:'delete']" method="DELETE">
-                                                            <g:actionSubmit action="aceptar" value="Aceptar" onclick="return confirm('¿Confirma aceptar inscripcion del alumno ${alumnoInstance}?')" />
-                                                            <g:actionSubmit action="rechazar" value="Rechazar" onclick="return confirm('¿Confirma rechazar inscripcion del alumno ${alumnoInstance}?')" />
+                                                            <g:actionSubmit action="aceptar" value="Aceptar" onclick="return confirm('¿Confirma aceptar inscripcion del alumno ${inscripcionInstance.alumno}?')" />
+                                                            <g:actionSubmit action="rechazar" value="Rechazar" onclick="return confirm('¿Confirma rechazar inscripcion del alumno ${inscripcionInstance.alumno}?')" />
                                                     </g:form>
                                                 </td>
 

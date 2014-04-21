@@ -20,7 +20,8 @@ class Alumno {
         contrasena blank: false
         confContrasena (validator: { val, obj ->
             if (val != obj.properties['contrasena']) return 'contrasena.missmatch'})
-        telefono blank : false
+        telefono (blank : false, validator:{val, obj ->
+            if (val.length() != 8) return 'telefono.missmatch'})
         
     }
     String toString(){

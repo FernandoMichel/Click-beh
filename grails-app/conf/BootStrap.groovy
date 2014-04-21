@@ -24,7 +24,7 @@ class BootStrap {
         contrasena:"pass",
         confContrasena:"pass",
         correo:"fernando_michel@ciencias.unam.mx",
-        telefono:"telefono"
+        telefono:"12345678"
         )
         alumnoPrueba.save()
         if(alumnoPrueba.hasErrors()){
