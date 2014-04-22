@@ -2,7 +2,6 @@
 <html>
 	<head>
 		<meta name="layout" content="main" charset="UTF-8"/>
-		<title>Escuela</title>
 		<style type="text/css" media="screen">
                     
                         r1{

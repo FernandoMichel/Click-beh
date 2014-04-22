@@ -21,7 +21,7 @@ class Alumno {
         confContrasena (validator: { val, obj ->
             if (val != obj.properties['contrasena']) return 'contrasena.missmatch'})
         telefono (blank : false, validator:{val, obj ->
-            if (val.length() != 8) return 'telefono.missmatch'})
+            if ((val.length() != 8)|| !(val==~/[0-9]+/)) return 'telefono.missmatch'})
         
     }
     String toString(){
