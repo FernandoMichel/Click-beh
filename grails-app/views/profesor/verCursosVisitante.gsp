@@ -5,14 +5,38 @@
 	<head>
 		<meta name="layout" content="main">
 		<g:set var="entityName" value="${message(code: 'profesor.label', default: 'Profesor')}" />
+                <link rel="shortcut icon" href="./images/logo.ico" ></link>
+                <link rel="stylesheet" href="../css/screen.css" type="text/css" media="screen, projection" />
+                <link rel="stylesheet" href="../css/960.css" type="text/css" media="screen, projection" />
+                <link rel="stylesheet" href="../css/print.css" type="text/css" media="print" /> 
+                <link rel="stylesheet" href="../css/project.css" type="text/css" media="screen, projection" />
+    
 	</head>
 	<body>
-		<a href="#list-profesor" class="skip" tabindex="-1">
-		<div align="right">
-                              <a href="http://localhost:8080/EscuelaIngles" class="menu" align="right"> Inicio </a> 
+                  <div class="container_12" >
+		<div class="grid_4 header">
+			<a href="index.htm"><img src="../images/logo.png" alt="Click-Beh" width="150" height="112" /></a>
 		</div>
-		<div id="list-profesor" class="content scaffold-list" role="main">
-			<h1><g:message code=" " default="Cursos disponibles:" /></h1>
+		<!-- END LOGO -->
+   	 
+		<!-- START NAVIGATION -->
+              
+   	  	<div class="grid_8 header">
+   	  		<div id="navigation">
+				<ul id="nav">
+   
+					<li id="home"><a href="http://localhost:8080/EscuelaIngles" title="Home page" class="otherPage">Inicio</a></li>
+					<li id="about"><g:link controller="profesor" action="verCursosVisitante" class="currentPage">Ver Cursos</g:link></li>
+					<li id="portfolio"> <g:link controller="ses" action="iniciarSesion" class="otherPage">Iniciar Sesion</g:link></li>
+					<li id="contact"><g:link controller="ses" action="irAOpcion" class="otherPage">Registro</g:link> </li>
+				</ul>
+			</div>
+		</div>
+                </div>
+		<div id="list-profesor" class="content scaffold-list" role="main" style="clear:both;">
+                <div>  	
+                <h1><g:message code=" " default="Cursos disponibles:" /></h1>
+                 </div>     
 			<g:if test="${flash.message}">
 				<div class="message" role="status">${flash.message}</div>
 			</g:if>
