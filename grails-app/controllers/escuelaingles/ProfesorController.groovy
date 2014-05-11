@@ -57,21 +57,27 @@ def fileUploadService
         }
 
         
-        CommonsMultipartFile file = request.getFile('certificado')        
-        if( file.empty ){
-         flash.message = "No se selecciono un archivo"        
+        CommonsMultipartFile file = request.getFile('certificado')
+        CommonsMultipartFile file2 = request.getFile('video')       
+        if( file.empty || file2.empty){
+         flash.error = "No se selecciono un archivo"        
          respond profesorInstance, view : 'create'   
          return
         }
-        String baseFileName = "certificado_"+profesorInstance.id.toString()
-        def downloadedFile = request.getFile( "certificado" )
         def dirArchivo = "files/"
+        String baseFileName = "certificado_"+profesorInstance.correo
+        String baseFileName2 = "video_"+profesorInstance.correo
+        def downloadedFile = request.getFile( "certificado" )
+        def downloadedFile2 = request.getFile( "video" )
         String mimeType = downloadedFile.contentType
         String extension = mimeType.substring(mimeType.lastIndexOf('/') + 1)
-        // Guardando el archivo en la carpeta files, in the web-app, with the name: baseFileName
+        mimeType = downloadedFile2.contentType
+        String extension2 = mimeType.substring(mimeType.lastIndexOf('/') + 1)
         String fileUploaded = fileUploadService.uploadFile( downloadedFile, baseFileName+"."+extension, dirArchivo )
-        if( fileUploaded ){
+        String fileUploaded2 = fileUploadService.uploadFile( downloadedFile2, baseFileName2+"."+extension2, dirArchivo )
+        if( fileUploaded && fileUploaded2){
            profesorInstance.dirCertificado = "${baseFileName}"+"."+extension
+           profesorInstance.dirVideo = "${baseFileName2}"+"."+extension2
            profesorInstance.save flush:true
            flash.message = message(code: 'default.created.message', args: [message(code: 'Profesor.label', default: 'Profesor'), profesorInstance.id])
            redirect profesorInstance
