@@ -24,6 +24,10 @@
 						<g:sortableColumn property="horario" title="${message(code: 'profesor.nivel.label', default: 'Horario')}" />
 					
 						<g:sortableColumn property="nombre" title="${message(code: 'profesor.nombre.label', default: 'Profesor')}" />
+					
+						<g:sortableColumn property="dirCertificado" title="${message(code: 'profesor.nombre.label', default: 'Certificado')}" />
+					
+						<g:sortableColumn property="dirVideo" title="${message(code: 'profesor.nombre.label', default: 'Video de introduccion')}" />
                                                 
                                                 <th>Opciones de respuesta</th>
 
@@ -43,6 +47,10 @@
 						${fieldValue(bean: profesorInstance, field: "apellp")}
 					
 						${fieldValue(bean: profesorInstance, field: "apellm")}</td>
+                                                
+                                                <td><a href="/escuelaingles/files/${profesorInstance?.dirCertificado}">Certificado</a></td>
+                                                
+                                                <td><a href="/escuelaingles/files/${profesorInstance?.dirVideo}">Video de Introduccion</a></td>
 					
 						<td><g:form url="[resource:profesorInstance, action:'save']" >
                                                             <g:actionSubmit action="aceptar" value="Aceptar" onclick="return confirm('¿Confirma aceptar registro del profesor ${profesorInstance}?')"/>
