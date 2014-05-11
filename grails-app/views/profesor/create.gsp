@@ -50,14 +50,14 @@
 				</g:eachError>
 			</ul>
 			</g:hasErrors>
-			<g:form url="[resource:profesorInstance, action:'save']" >
+			<g:uploadForm url="[resource:profesorInstance, action:'save']" >
 				<fieldset class="form" >
 					<g:render template="form"/>
 				</fieldset>
 				<fieldset class="buttons">
-					<g:submitButton name="create" class="save" value="${message(code: ' ', default: 'Registrar')}" />
+					<g:submitButton name="create" class="save" value='Registrar' />
 				</fieldset>
-			</g:form>
+			</g:uploadForm>
 		</div>
                 </div>
 	</body>

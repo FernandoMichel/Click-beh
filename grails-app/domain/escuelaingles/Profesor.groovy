@@ -8,10 +8,10 @@ class Profesor {
     String confContrasena
     String correo
     
-    Object certificado
+    String dirCertificado
     String nivel
     String horario
-    Object video
+    String dirVideo
     
     boolean aceptado
 
@@ -21,12 +21,11 @@ class Profesor {
         apellp blank : false
         apellm blank : false
         contrasena blank : false
-        confContrasena (validator: { val, obj ->
-            if (val != obj.properties['contrasena']) return 'contrasena.missmatch'})
-        certificado blank : true
+        confContrasena (validator: { val, obj -> if (val != obj.properties['contrasena']) return 'contrasena.missmatch'})
         nivel (blank: false , inList: ["Principiante","Intermedio","Avanzado","Conversacion"])
-        horario blank: false
-        video blank: true
+        horario blank : false
+        dirCertificado nullable: true
+        dirVideo nullable: true
         
     }
     

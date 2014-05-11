@@ -66,3 +66,18 @@
 	<g:textField name="horario" required="" value="${profesorInstance?.horario}"/>
 </div>
 
+<div class="fieldcontain ${hasErrors(bean: profesorInstance, field: 'certificado', 'error')} required">
+	<label for="certificado">
+		<g:message code="profesor.certificado.label" default="Certificado" />	
+		<span class="required-indicator">*</span>	
+	</label>
+	<input type="file" name="certificado" />
+</div>
+
+<div class="fieldcontain ${hasErrors(bean: profesorInstance, field: 'video', 'error')} required">
+	<label for="video">
+		<g:message code="profesor.video.label" default="Video de introducción" />	
+		<span class="required-indicator">*</span>	
+	</label>
+	<input type="file" name="video" />
+</div>

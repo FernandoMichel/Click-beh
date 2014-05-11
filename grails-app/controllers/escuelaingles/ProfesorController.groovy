@@ -2,9 +2,11 @@ package escuelaingles
 
 import static org.springframework.http.HttpStatus.*
 import grails.transaction.Transactional
+import org.springframework.web.multipart.commons.CommonsMultipartFile
 
 @Transactional(readOnly = true)
 class ProfesorController {
+def fileUploadService
 
     static allowedMethods = [save: "POST", update: "PUT", delete: "DELETE"]
 
@@ -54,15 +56,30 @@ class ProfesorController {
             return
         }
 
-        profesorInstance.save flush:true
-
-        request.withFormat {
-            form {
-                flash.message = message(code: 'default.created.message', args: [message(code: 'profesorInstance.label', default: 'Profesor'), profesorInstance.id])
-                redirect profesorInstance
-            }
-            '*' { respond profesorInstance, [status: CREATED] }
+        
+        CommonsMultipartFile file = request.getFile('certificado')        
+        if( file.empty ){
+         flash.message = "No se selecciono un archivo"        
+         respond profesorInstance, view : 'create'   
+         return
         }
+        String baseFileName = "certificado_"+profesorInstance.id.toString()
+        def downloadedFile = request.getFile( "certificado" )
+        def dirArchivo = "files/"
+        String mimeType = downloadedFile.contentType
+        String extension = mimeType.substring(mimeType.lastIndexOf('/') + 1)
+        // Guardando el archivo en la carpeta files, in the web-app, with the name: baseFileName
+        String fileUploaded = fileUploadService.uploadFile( downloadedFile, baseFileName+"."+extension, dirArchivo )
+        if( fileUploaded ){
+           profesorInstance.dirCertificado = "${baseFileName}"+"."+extension
+           profesorInstance.save flush:true
+           flash.message = message(code: 'default.created.message', args: [message(code: 'Profesor.label', default: 'Profesor'), profesorInstance.id])
+           redirect profesorInstance
+        }
+        else
+        {
+            respond profesorInstance, [status: CREATED]
+        }        
     }
 
     def edit(Profesor profesorInstance) {

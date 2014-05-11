@@ -11,7 +11,9 @@ class BootStrap {
         correo:"daniel_michel@ciencias.unam.mx",
         nivel:"Principiante",
         horario:"matutino",
-        aceptado:true
+        aceptado:true,
+        dirCertificado:"someDir",
+        dirVideo:"someDir"
         )
         profePrueba.save()
         if(profePrueba.hasErrors()){
