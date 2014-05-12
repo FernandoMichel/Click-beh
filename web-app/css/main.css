@@ -84,22 +84,23 @@ body {
 	height: 100%;
 }
 
-
+/**
 a:link, a:visited, a:hover {
     color: black;
 }
 
 
 a:hover, a:active {
-	outline: none; /* prevents outline in webkit on active links but retains it for tab focus */
-}
+	outline: none; /* prevents outline in webkit on active links but retains it for tab focus } */
+
+
 
 h1 {
         font-family: 'GeosansLight-Oblique';
-	color: whitesmoke;
+	color: black;
 	font-weight: normal;
 	font-size: 2.25em;
-	margin: 0.8em 0 0.3em 0;
+	
 }
 
 ul {
@@ -615,15 +616,15 @@ th:hover, tr:hover {
 .buttons .save {
 	background-image: url(../images/skin/database_save.png);
 }
-
+/*
 a.skip {
 	position: relative;
         rigth: 9999px;
 }
-
+*/
 
 .menu {
-    -moz-box-shadow:inset -1px 0px 0px -1px #bee2f9;
+   -moz-box-shadow:inset -1px 0px 0px -1px #bee2f9;
 	-webkit-box-shadow:inset -1px 0px 0px -1px #bee2f9;
 	box-shadow:inset -1px 0px 0px -1px #bee2f9;
 	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #63b8ee), color-stop(1, #468ccf) );
@@ -656,55 +657,51 @@ a.skip {
 	text-align:center;
 	text-shadow:1px 1px 0px #7cacde;
         align: center;
-        /*
-	-moz-box-shadow:inset 0px 1px 0px 0px #ffffff;
-	-webkit-box-shadow:inset 0px 1px 0px 0px #ffffff;
-	box-shadow:inset 0px 1px 0px 0px #ffffff;
-	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #ededed), color-stop(1, #dfdfdf) );
-	background:-moz-linear-gradient( center top, #ededed 5%, #dfdfdf 100% );
-	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#ededed', endColorstr='#dfdfdf');
-	background-color:#ededed;
-	-webkit-border-top-left-radius:6px;
-	-moz-border-radius-topleft:6px;
-	border-top-left-radius:6px;
-	-webkit-border-top-right-radius:6px;
-	-moz-border-radius-topright:6px;
-	border-top-right-radius:6px;
-	-webkit-border-bottom-right-radius:6px;
-	-moz-border-radius-bottomright:6px;
-	border-bottom-right-radius:6px;
-	-webkit-border-bottom-left-radius:6px;
-	-moz-border-radius-bottomleft:6px;
-	border-bottom-left-radius:6px;
-	text-indent:0;
-	border:1px solid #dcdcdc;
-	display:inline-block;
-	color:#777777;
-	font-family:arial;
-	font-size:10px;
-	font-weight:bold;
-	font-style:normal;
-	height:50px;
-	line-height:50px;
-	width:15em;
-	text-decoration:none;
-	text-align:center;
-	text-shadow:1px 1px 0px #ffffff;
-        align: center;
-        */
-        
+   
+    
 }
 
 .menu:hover {
-	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #468ccf), color-stop(1, #63b8ee) );
-	background:-moz-linear-gradient( center top, #468ccf 5%, #63b8ee 100% );
-	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#468ccf', endColorstr='#63b8ee');
-	background-color:#468ccf;
-}.menu:active {
-	position:relative;
-	top:1px;
+    background-color:red;
+	
+}
+
+
+.menu:active {
+	-moz-box-shadow:inset -1px 0px 0px -1px #bee2f9;
+	-webkit-box-shadow:inset -1px 0px 0px -1px #bee2f9;
+	box-shadow:inset -1px 0px 0px -1px #bee2f9;
+	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #63b8ee), color-stop(1, #468ccf) );
+	background:-moz-linear-gradient( center top, #63b8ee 5%, #468ccf 100% );
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#63b8ee', endColorstr='#468ccf');
+	background-color:#D52626;
+	-webkit-border-top-left-radius:20px;
+	-moz-border-radius-topleft:20px;
+	border-top-left-radius:20px;
+	-webkit-border-top-right-radius:20px;
+	-moz-border-radius-topright:20px;
+	border-top-right-radius:20px;
+	-webkit-border-bottom-right-radius:20px;
+	-moz-border-radius-bottomright:20px;
+	border-bottom-right-radius:20px;
+	-webkit-border-bottom-left-radius:20px;
+	-moz-border-radius-bottomleft:20px;
+	border-bottom-left-radius:20px;
+	text-indent:-2.82px;
+	display:inline-block;
+	color:#14396a;
+	font-family:Times New Roman;
+	font-size:13px;
+	font-weight:normal;
+	font-style:normal;
+	height:30px;
+	line-height:30px;
+	width:101px;
+	text-decoration:none;
+	text-align:center;
+	text-shadow:1px 1px 0px #7cacde;
+        align: center;
 }
 /* This button was generated using CSSButtonGenerator.com */
 
 
-}

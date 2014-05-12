@@ -47,10 +47,10 @@
    	  		<div id="navigation">
 				<ul id="nav">
    
-					<li id="home"><a href="http://localhost:8080/EscuelaIngles" title="Home page" class="currentPage">Inicio</a></li>
-					<li id="about"><g:link controller="profesor" action="verCursosVisitante" class="otherPage">Ver Cursos</g:link></li>
-					<li id="portfolio"> <g:link controller="ses" action="iniciarSesion" class="otherPage">Iniciar Sesion</g:link></li>
-					<li id="contact"><g:link controller="ses" action="irAOpcion" class="otherPage">Registro</g:link> </li>
+					<li id="home"><a href="http://localhost:8080/EscuelaIngles" title="Home page" class="menu">Inicio</a></li>
+					<li id="about"><g:link controller="profesor" action="verCursosVisitante" class="menu">Ver Cursos</g:link></li>
+					<li id="portfolio"> <g:link controller="ses" action="iniciarSesion" class="menu">Iniciar Sesion</g:link></li>
+					<li id="contact"><g:link controller="ses" action="irAOpcion" class="menu">Registro</g:link> </li>
 				</ul>
 			</div>
 		</div>
@@ -87,7 +87,7 @@
 	                    		<h1>&#xa1;&#xa1;Aprenderas Ingl&eacute;s garantizado!!</h1>
 	                            <p>
 	                            	En Clic-Beh tenemos la visi&oacute;n de un mundo donde todos hablen ingl&eacute;s y no haya problema
-	                            	ninguno de comunicaci&oacute;n, actualmente son muy pocas las personas en el mundo si hablamos del
+	                            	alguno de comunicaci&oacute;n, actualmente son muy pocas las personas en el mundo si hablamos del
 	                            	total que hablan ingl&eacute;s, en nuestra escuela podr&aacute;s encontrar profesores altamente
 	                            	capacitados y listos para introducirte en el mundo de ingl&eacute;s, con programas de primer mundo ya
 	                            	que contamos con las certificaciones de universidades Internacionales.

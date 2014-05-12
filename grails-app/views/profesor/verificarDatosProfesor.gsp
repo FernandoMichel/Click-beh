@@ -11,7 +11,7 @@
 		<a href="#list-profesor" class="skip" tabindex="-1">
 
 		<div id="list-profesor" class="content scaffold-list" role="main">
-			<h1><g:message code=" " default="Profesores postulados para dar cursos" /></h1>
+			<h1><g:message code=" " default="Profesores postulados para dar cursos"  /></h1>
 			<g:if test="${flash.message}">
 				<div class="message" role="status">${flash.message}</div>
 			</g:if>

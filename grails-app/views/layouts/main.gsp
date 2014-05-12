@@ -23,7 +23,8 @@
        
                             <div align="right">
                            <g:if test="${session.user}">
-                               <h1>Identificado como ${session.user  }
+                              
+                               <h1 style="color:black;font-size:1.5em">Sesión ${session.user  }</h1>
                                <g:link controller="ses" action="logout" class="menu"> Cerrar sesión </g:link></h1>
                             </g:if>
                                 

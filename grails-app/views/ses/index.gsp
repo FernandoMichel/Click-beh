@@ -83,10 +83,10 @@
    	  		<div id="navigation">
 				<ul id="nav">
    
-					<li id="home"><a href="http://localhost:8080/EscuelaIngles" title="Home page" class="otherPage">Inicio</a></li>
-					<li id="about"><g:link controller="profesor" action="verCursosVisitante" class="otherPage">Ver Cursos</g:link></li>
-					<li id="portfolio"> <g:link controller="ses" action="iniciarSesion" class="currentPage">Iniciar Sesion</g:link></li>
-					<li id="contact"><g:link controller="ses" action="irAOpcion" class="otherPage">Registro</g:link> </li>
+					<li id="home"><a href="http://localhost:8080/EscuelaIngles" title="Home page" class="menu">Inicio</a></li>
+					<li id="about"><g:link controller="profesor" action="verCursosVisitante" class="menu">Ver Cursos</g:link></li>
+					<li id="portfolio"> <g:link controller="ses" action="iniciarSesion" class="menu">Iniciar Sesion</g:link></li>
+					<li id="contact"><g:link controller="ses" action="irAOpcion" class="menu">Registro</g:link> </li>
 				</ul>
 			</div>
 		</div>
