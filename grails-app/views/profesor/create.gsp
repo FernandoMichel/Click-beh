@@ -32,12 +32,12 @@
 					<li id="home"><a href="http://localhost:8080/EscuelaIngles" title="Home page" class="menu">Inicio</a></li>
 					<li id="about"><g:link controller="profesor" action="verCursosVisitante" class="menu">Ver Cursos</g:link></li>
 					<li id="portfolio"> <g:link controller="ses" action="iniciarSesion" class="menu">Iniciar Sesion</g:link></li>
-					<li id="contact"><g:link controller="ses" action="irAOpcion" class="menu">Registro</g:link> </li>
+					<li id="contact"><g:link controller="ses" action="irAOpcion" class="menu current">Registro</g:link> </li>
 				</ul>
 			</div>
 		</div>
                 </div>
-		<div style="clear:both">
+		<div id="contenedor" class="conten" style="position:absolute;top:25%; left:30%" >
 		<div id="create-profesor" class="content scaffold-create" role="main">
 			<h1><g:message code=" " default="Llena tus datos para ser profesor" /></h1>
 			<g:if test="${flash.message}">

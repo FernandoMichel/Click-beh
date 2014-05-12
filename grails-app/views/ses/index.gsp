@@ -3,7 +3,16 @@
 	<head>
 		<meta name="layout" content="main" charset="UTF-8"/>
 		<title>Escuela</title>
-		<style type="text/css" media="screen">
+		<meta name="layout" content="main">
+                
+                
+		<g:set var="entityName" value="${message(code: 'profesor.label', default: 'Profesor')}" />
+                <link rel="shortcut icon" href="../images/logo.ico" ></link>
+                <link rel="stylesheet" href="../css/screen.css" type="text/css" media="screen, projection" />
+                <link rel="stylesheet" href="../css/960.css" type="text/css" media="screen, projection" />
+                <link rel="stylesheet" href="../css/print.css" type="text/css" media="print" /> 
+                <link rel="stylesheet" href="../css/project.css" type="text/css" media="screen, projection" />
+                <style type="text/css" media="screen">
                     
                         body {
                             
@@ -62,13 +71,7 @@
                               
 			}
 		</style>
-                <meta name="layout" content="main">
-		<g:set var="entityName" value="${message(code: 'profesor.label', default: 'Profesor')}" />
-                <link rel="shortcut icon" href="../images/logo.ico" ></link>
-                <link rel="stylesheet" href="../css/screen.css" type="text/css" media="screen, projection" />
-                <link rel="stylesheet" href="../css/960.css" type="text/css" media="screen, projection" />
-                <link rel="stylesheet" href="../css/print.css" type="text/css" media="print" /> 
-                <link rel="stylesheet" href="../css/project.css" type="text/css" media="screen, projection" />
+                
 	</head>
 	<body>
                <div class="container_12" >
@@ -85,8 +88,8 @@
    
 					<li id="home"><a href="http://localhost:8080/EscuelaIngles" title="Home page" class="menu">Inicio</a></li>
 					<li id="about"><g:link controller="profesor" action="verCursosVisitante" class="menu">Ver Cursos</g:link></li>
-					<li id="portfolio"> <g:link controller="ses" action="iniciarSesion" class="menu">Iniciar Sesion</g:link></li>
-					<li id="contact"><g:link controller="ses" action="irAOpcion" class="menu">Registro</g:link> </li>
+					<li id="portfolio"> <g:link controller="ses" action="iniciarSesion" class="menu current">Iniciar Sesion</g:link></li>
+					<li id="contact"><g:link controller="ses" action="irAOpcion" class="menu" >Registro</g:link> </li>
 				</ul>
 			</div>
 		</div>
