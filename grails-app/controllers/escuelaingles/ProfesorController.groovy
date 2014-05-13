@@ -173,4 +173,7 @@ def fileUploadService
         flash.message="Se ha aceptado el registro del profesor ${profesorInstance}"
         redirect action:"verificarDatosProfesor"
     }
+def certificado(Profesor profesorInstance){
+    
+}
 }

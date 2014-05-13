@@ -48,9 +48,15 @@
 					
 						${fieldValue(bean: profesorInstance, field: "apellm")}</td>
                                                 
-                                                <td><a href="/escuelaingles/files/${profesorInstance?.dirCertificado}">Certificado</a></td>
                                                 
-                                                <td><a href="/escuelaingles/files/${profesorInstance?.dirVideo}">Video de Introduccion</a></td>
+                                                <td>
+                                              <g:link controller="profesor" action="certificado(profesorInstance)" class="menu">Certificado</g:link></li>
+                                                </td>
+                                                <td>
+                                                      <video width="320" height="240" controls>
+                                                        <source src="../files/${profesorInstance.dirVideo}" type="video/mp4">
+                                                            </video>
+                                                          </td>
 					
 						<td><g:form url="[resource:profesorInstance, action:'save']" >
                                                             <g:actionSubmit action="aceptar" value="Aceptar" onclick="return confirm('¿Confirma aceptar registro del profesor ${profesorInstance}?')"/>

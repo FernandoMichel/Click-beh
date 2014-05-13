@@ -8,6 +8,7 @@
 		<g:set var="entityName" value="${message(code: 'profesor.label', default: 'Profesor')}" />
 		<title><g:message code="default.list.label" args="[entityName]" /></title>
 	</head>
+                </div>
 	<body>
 		<a href="#list-profesor" class="skip" tabindex="-1">
 
@@ -25,6 +26,9 @@
 						<g:sortableColumn property="horario" title="${message(code: 'profesor.nivel.label', default: 'Horario')}" />
 					
 						<g:sortableColumn property="nombre" title="${message(code: 'profesor.nombre.label', default: 'Profesor')}" />
+                                                
+                                                <g:sortableColumn property="nombre" title="${message(code: 'profesor.nombre.label', default: 'Video')}" />
+                                                
 
 					</tr>
 				</thead>
@@ -47,6 +51,12 @@
 						<td><g:form url="[resource:profesorInstance, action:'save']" >
                                                             <g:actionSubmit action="inscribir" value="Inscribir" onclick="return confirm('¿Inscribir el curso de nivel ${profesorInstance.nivel} con el profesor ${profesorInstance}?')" />
                                                     </g:form></td>
+                                        <td>          
+                                        <video width="320" height="240" controls>
+                                                        <source src="../files/${profesorInstance.dirVideo}" type="video/mp4">
+                                                            </video>
+                                                          
+                                        </td>   
 					</tr>
                                     </g:if>
 				</g:each>

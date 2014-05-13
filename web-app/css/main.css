@@ -670,10 +670,10 @@ a.skip {
 
 
 .menu:active {
-    background: red;
+    background: #E75252;
 }
 .current{
-     background: red;
+     background: #E75252;
     
 }
 

@@ -37,7 +37,7 @@
 			</div>
 		</div>
                 </div>
-		<div id="contenedor" class="conten" style="position:absolute;top:25%; left:30%" >
+		<div  style="posotion:absolute;top:25%; left:30%;width:40%;" >
 		<div id="create-profesor" class="content scaffold-create" role="main">
 			<h1><g:message code=" " default="Llena tus datos para ser profesor" /></h1>
 			<g:if test="${flash.message}">

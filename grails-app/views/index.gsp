@@ -38,7 +38,7 @@
 	
 		<!-- START LOGO -->
 		<div class="grid_4 header">
-			<a href="index.htm"><img src="images/logo.png" alt="Click-Beh" width="150" height="112" /></a>
+			<img src="images/logo.png" alt="Click-Beh" width="150" height="112" />  
 		</div>
 		<!-- END LOGO -->
    	 
