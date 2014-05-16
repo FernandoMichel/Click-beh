@@ -100,7 +100,7 @@ def fileUploadService
         }
 
         if (profesorInstance.hasErrors()) {
-            respond profesorInstance.errors, view:'edit'
+            respond profesorInstance.errors, view:'manejoCuentaProfesor'
             return
         }
 

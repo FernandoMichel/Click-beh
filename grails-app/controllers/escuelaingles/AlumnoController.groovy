@@ -61,7 +61,7 @@ class AlumnoController {
         }
 
         if (alumnoInstance.hasErrors()) {
-            respond alumnoInstance.errors, view:'edit'
+            respond alumnoInstance.errors, view:'manejoCuentaAlumno'
             return
         }
 
@@ -76,6 +76,10 @@ class AlumnoController {
         }
     }
 
+    def actualizarDatos(){
+        redirect action: "opcionProfesorAlumno"
+    }
+    
     @Transactional
     def delete(Alumno alumnoInstance) {
 
