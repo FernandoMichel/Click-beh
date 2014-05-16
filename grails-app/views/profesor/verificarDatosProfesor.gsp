@@ -50,7 +50,8 @@
                                                 
                                                 
                                                 <td>
-                                              <g:link controller="profesor" action="certificado(profesorInstance)" class="menu">Certificado</g:link></li>
+                                            <embed src="../files/${profesorInstance.dirCertificado}" width="600" height="500" alt="pdf" pluginspage="http://www.adobe.com/products/acrobat/readstep2.html">                                           
+
                                                 </td>
                                                 <td>
                                                       <video width="320" height="240" controls>

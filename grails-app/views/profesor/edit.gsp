@@ -7,7 +7,6 @@
 		<title><g:message code="default.edit.label" args="[entityName]" /></title>
 	</head>
 	<body>
-		<a href="#edit-profesor" class="skip" tabindex="-1"><g:message code="default.link.skip.label" default="Skip to content&hellip;"/></a>
 		<div id="edit-profesor" class="content scaffold-edit" role="main">
 			<h1><g:message code="default.edit.label" args="[entityName]" /></h1>
 			<g:if test="${flash.message}">
@@ -23,7 +22,7 @@
 			<g:form url="[resource:profesorInstance, action:'update']" method="PUT" >
 				<g:hiddenField name="version" value="${profesorInstance?.version}" />
 				<fieldset class="form">
-					<g:render template="form"/>
+					<g:render template="form_1"/>
 				</fieldset>
 				<fieldset class="buttons">
 					<g:actionSubmit class="save" action="update" value="${message(code: 'default.button.update.label', default: 'Update')}" />

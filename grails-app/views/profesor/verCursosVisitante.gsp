@@ -46,10 +46,13 @@
 					
 						<g:sortableColumn property="nivel" title="${message(code: 'profesor.nivel.label', default: 'Nivel')}" />
 					
+                                        
 						<g:sortableColumn property="horario" title="${message(code: 'profesor.nivel.label', default: 'Horario')}" />
-					
+		
+                                         
 						<g:sortableColumn property="nombre" title="${message(code: 'profesor.nombre.label', default: 'Profesor')}" />
-
+                                       
+                                                       
 					</tr>
 				</thead>
 				<tbody>
@@ -62,7 +65,16 @@
 						<td>${fieldValue(bean: profesorInstance, field: "horario")}</td>
 					
 						<td>${fieldValue(bean: profesorInstance, field: "nombre")}
-					
+                                                
+                                                    <td>
+                                            <embed src="../files/${profesorInstance.dirCertificado}" width="600" height="500" alt="pdf" pluginspage="http://www.adobe.com/products/acrobat/readstep2.html">                                           
+
+                                                </td>
+                                                <td>
+                                                      <video width="320" height="240" controls>
+                                                        <source src="../files/${profesorInstance.dirVideo}" type="video/mp4">
+                                                            </video>
+                                                          </td>
 						${fieldValue(bean: profesorInstance, field: "apellp")}
 					
 						${fieldValue(bean: profesorInstance, field: "apellm")}</td>
