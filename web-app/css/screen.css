@@ -96,10 +96,10 @@ body  {font-size: 75%; color: #222; font-family: Georgia, serif; }
 .header {margin-top: 20px;}
 
 /*navigation*/
-#navigation {height:80px; width:550px;margin:5px 0 0 0;padding:0 0 0 0; font-size: 13px;}
+#navigation {height:80px; width:650px;margin:5px 0 0 0;padding:0 0 0 0; font-size: 13px;}
 #navigation a {color:#000;}
 ul#nav {width: 550px;height:54px;padding:0 0 0 0;margin:0 0 0 10px;}
-ul#nav li {line-height: 22px;width: 120px;margin-top: 20px;padding:10px 10px 0 0;margin:0;display:block;float:left; text-align: center;/*text-indent:-9999px;*/}
+ul#nav li {line-height: 22px;width: 110px;margin-top: 20px;padding:10px 0 0 0;margin:0;display:block;float:left; text-align: center;/*text-indent:-9999px;*/}
 ul#nav li a {height:46px;border:0;display:block;text-decoration:none;overflow:hidden;padding:0;margin:0;}
 li#home a, li#about a, li#portfolio a, li, li#contact a{height:46px;}
 li#home a:hover, li#home a:focus, li#about a:hover, li#about a:focus,

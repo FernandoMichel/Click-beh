@@ -42,7 +42,7 @@
 			</g:if>
 			<table>
 			<thead>
-					<tr>
+					<tr style="text-align:center;">
 					
 						<g:sortableColumn property="nivel" title="${message(code: 'profesor.nivel.label', default: 'Nivel')}" />
 					
@@ -51,7 +51,9 @@
 		
                                          
 						<g:sortableColumn property="nombre" title="${message(code: 'profesor.nombre.label', default: 'Profesor')}" />
-                                       
+                                                
+                                                <g:sortableColumn property="dirCertificado" title="${message(code: 'profesor.nombre.label', default: 'Certificado')}" />
+                                                <g:sortableColumn property="dirVideo" title="${message(code: 'profesor.nombre.label', default: 'Video')}" />
                                                        
 					</tr>
 				</thead>

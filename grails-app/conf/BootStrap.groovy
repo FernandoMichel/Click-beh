@@ -1,7 +1,23 @@
 import escuelaingles.*
 class BootStrap {
+    
+    def mailService
+    
 
     def init = { servletContext ->
+        
+        
+        
+        mailService.sendMail{
+        to "jona_54_.com@ciencias.unam.mx"
+        subject "New Account"
+        html """
+        Your <strong>new</strong> account is set up.  
+        Your username is: """
+        }   
+        
+        
+        
         def profePrueba=new Profesor(
         nombre:"Profe",
         apellp:"de",
@@ -12,8 +28,8 @@ class BootStrap {
         nivel:"Principiante",
         horario:"matutino",
         aceptado:true,
-        dirCertificado:"someDir",
-        dirVideo:"someDir"
+        dirCertificado:"certificado_prof@gmail.com.pdf",
+        dirVideo:"video_prof@gmail.com.x-ms-wmv.mp4"
         )
         profePrueba.save()
         if(profePrueba.hasErrors()){

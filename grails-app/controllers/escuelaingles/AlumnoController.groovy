@@ -25,6 +25,10 @@ class AlumnoController {
         respond new Alumno(params)
     }
     
+    def interfazAlumno(){}
+    
+    def consultarCalifacacion(){}
+    
 
     @Transactional
     def save(Alumno alumnoInstance) {

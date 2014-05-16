@@ -4,6 +4,7 @@ class SesController {
     
     def index() { 
     }
+    
     def opcionProfesorAlumno() {
     
     }
@@ -18,7 +19,7 @@ class SesController {
         if (encontrado){
             session.user = encontrado
         
-            redirect controller: "Profesor",action: "verCursosAlumno"
+            redirect controller: "Alumno",action: "interfazAlumno"
         
             }else{
             encontrado = Profesor.findWhere(correo:params['correo'],contrasena:params['contrasena'])
