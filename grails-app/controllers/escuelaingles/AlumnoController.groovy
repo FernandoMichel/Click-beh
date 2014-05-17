@@ -16,9 +16,7 @@ class AlumnoController {
     }
 
     def show(Alumno alumnoInstance) {
-         session.user = alumnoInstance
-         flash.message="Tu cuenta se ha registrado exitosamente"
-        redirect controller: "profesor", action: "verCursosAlumno"
+        redirect controller: "alumno", action: "interfazAlumno"
     }
 
     def create() {
@@ -46,8 +44,10 @@ class AlumnoController {
 
         request.withFormat {
             form {
-                flash.message = message(code: 'default.created.message', args: [message(code: 'alumnoInstance.label', default: 'Alumno'), alumnoInstance.id])
-                redirect alumnoInstance
+                
+                session.user = alumnoInstance
+                flash.message="Tu cuenta se ha registrado exitosamente"
+                redirect action: "interfazAlumno"
             }
             '*' { respond alumnoInstance, [status: CREATED] }
         }
@@ -65,7 +65,7 @@ class AlumnoController {
         }
 
         if (alumnoInstance.hasErrors()) {
-            respond alumnoInstance.errors, view:'manejoCuentaAlumno'
+            respond alumnoInstance.errors, view:'edit'
             return
         }
 

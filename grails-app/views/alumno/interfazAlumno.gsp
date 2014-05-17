@@ -47,10 +47,10 @@
    	  		<div id="navigation">
 				<ul id="nav">
    
-					<li id="home"><a href="http://localhost:8080/EscuelaIngles" title="Home page" class="menu current">Inicio</a></li>
-					<li id="about"><g:link controller="profesor" action="verCursosVisitante" class="menu">Ver Cursos</g:link></li>
-					<li id="portfolio"> <g:link controller="ses" action="consultarCalifacacion" class="menu">Calificaciones</g:link></li>
-                                        <li id="manejar>"> <g:link class="menu" controller="Alumno" action="edit" resource="${session.user}">Manejar Cuenta</g:link></li>
+					<li id="home"><g:link controller="alumno" action="interfazAlumno" class="menu">Inicio</g:link></li>
+					<li id="about"><g:link controller="profesor" action="verCursosAlumno" class="menu">Inscripciones</g:link></li>
+					<li id="portfolio"> <g:link controller="alumno" action="consultarCalifacacion" class="menu">Calificaciones</g:link></li>
+                                        <li id="manejar"> <g:link class="menu" controller="Alumno" action="edit" resource="${session.user}">Manejar Cuenta</g:link></li>
                                         <li id="cerrar"><g:link controller="ses" action="logout" class="menu"> Cerrar sesión </g:link><li>
 
 				</ul>
@@ -61,7 +61,9 @@
 		<div class="clear"></div>
 	</div>
 	<!-- END TOP SECTION -->
-   
+        <g:if test="${flash.message}">
+            <div class="message" role="status">${flash.message}</div>
+        </g:if>
 	<!-- START MEDIUM SECTION -->
 	<div class="container_12 medium">
    

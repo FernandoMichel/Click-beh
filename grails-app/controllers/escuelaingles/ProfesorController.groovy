@@ -26,8 +26,13 @@ def fileUploadService
     }
 
     def verificarDatosProfesor(Integer max) {
+        if (session.user && (session.user=="Administrador")){
         params.max = Math.min(max ?: 10, 100)
         respond Profesor.list(params), model:[profesorInstanceCount: Profesor.count()]
+        }else{
+            session.user=null
+            redirect(uri: " ")
+        }
     }
     
     def entrarSistema(String correo, String contrasena){

@@ -55,7 +55,7 @@
 					<g:render template="form"/>
 				</fieldset>
 				<fieldset class="buttons">
-					<g:submitButton name="create" class="save" value="${message(code: ' ', default: 'Registrar')}" />
+					<g:submitButton name="create" class="save" value="Registrar" />
 				</fieldset>
 			</g:form>
 		</div>

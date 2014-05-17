@@ -8,13 +8,13 @@ class BootStrap {
         
         
         
-        mailService.sendMail{
-        to "jona_54_.com@ciencias.unam.mx"
-        subject "New Account"
-        html """
-        Your <strong>new</strong> account is set up.  
-        Your username is: """
-        }   
+//        mailService.sendMail{
+//        to "daniel_michel@ciencias.unam.mx"
+//        from "daniel_michel@ciencias.unam.mx"
+//        subject "New Account"
+//        html """
+//        some text here """
+//        }   
         
         
         
@@ -29,7 +29,7 @@ class BootStrap {
         horario:"matutino",
         aceptado:true,
         dirCertificado:"certificado_prof@gmail.com.pdf",
-        dirVideo:"video_prof@gmail.com.x-ms-wmv.mp4"
+        dirVideo:"video_prof@gmail.com.mp4"
         )
         profePrueba.save()
         if(profePrueba.hasErrors()){
