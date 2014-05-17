@@ -35,7 +35,7 @@ def fileUploadService
         }
     }
     
-    def entrarSistema(String correo, String contrasena){
+    def interfazProfesor(String correo, String contrasena){
         
     }
 
@@ -84,8 +84,9 @@ def fileUploadService
            profesorInstance.dirCertificado = "${baseFileName}"+"."+extension
            profesorInstance.dirVideo = "${baseFileName2}"+"."+extension2
            profesorInstance.save flush:true
-           flash.message = message(code: 'default.created.message', args: [message(code: 'Profesor.label', default: 'Profesor'), profesorInstance.id])
-           redirect profesorInstance
+           session.user = profesorInstance
+           flash.message="Tu cuenta se ha registrado exitosamente"
+           redirect action: "interfazProfesor"
         }
         else
         {

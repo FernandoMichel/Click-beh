@@ -18,14 +18,12 @@ class SesController {
          def encontrado = Alumno.findWhere(correo:params['correo'],contrasena:params['contrasena'])
         if (encontrado){
             session.user = encontrado
-        
             redirect controller: "Alumno",action: "interfazAlumno"
-        
             }else{
             encontrado = Profesor.findWhere(correo:params['correo'],contrasena:params['contrasena'])
             if(encontrado){
                 session.user = encontrado
-                redirect controller: "Inscripcion",action: "solicitudesDeInscripcion"
+                redirect controller: "Profesor",action: "interfazProfesor"
             }else{
                 if(params['correo'] == "admin" && params['contrasena'] == "admin"){
                     session.user="Administrador"
