@@ -104,7 +104,7 @@
                                                 
                                                 
                                                 <td>
-                                            <embed src="../files/${profesorInstance.dirCertificado}" width="600" height="500" alt="pdf" pluginspage="http://www.adobe.com/products/acrobat/readstep2.html">                                           
+                                            <embed src="../files/${profesorInstance.dirCertificado}" width="600" height="500" alt="pdf" pluginspage="http://www.adobe.com/products/acrobat/readstep2.html">
 
                                                 </td>
                                                 <td>

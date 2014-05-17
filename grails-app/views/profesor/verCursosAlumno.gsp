@@ -55,7 +55,7 @@
    
 					<li id="home"><g:link controller="alumno" action="interfazAlumno" class="menu">Inicio</g:link></li>
 					<li id="about"><g:link controller="profesor" action="verCursosAlumno" class="menu">Inscripciones</g:link></li>
-					<li id="portfolio"> <g:link controller="alumno" action="consultarCalifacacion" class="menu">Calificaciones</g:link></li>
+					<li id="portfolio"> <g:link controller="inscripcion" action="consultarCalificacion" class="menu">Calificaciones</g:link></li>
                                         <li id="manejar"> <g:link class="menu" controller="Alumno" action="edit" resource="${session.user}">Manejar Cuenta</g:link></li>
                                         <li id="cerrar"><g:link controller="ses" action="logout" class="menu"> Cerrar sesión </g:link><li>
 

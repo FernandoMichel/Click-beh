@@ -17,6 +17,11 @@ class InscripcionController {
         respond Inscripcion.list(params), model:[inscripcionInstanceCount: Inscripcion.count()]
     }
  
+    def consultarCalificacion(Integer max) {
+        params.max = Math.min(max ?: 10, 100)
+        respond Inscripcion.list(params), model:[inscripcionInstanceCount: Inscripcion.count()]
+    }
+    
     def show(Inscripcion inscripcionInstance) {
         respond inscripcionInstance
     }
@@ -104,6 +109,7 @@ class InscripcionController {
     @Transactional
     def aceptar(Inscripcion inscripcionInstance) {
         inscripcionInstance.aceptado=true
+        inscripcionInstance.calificacion=-1
         inscripcionInstance.save flush:true
         flash.message="Se ha aceptado la inscripcion del alumno ${inscripcionInstance.alumno}"
         redirect action:"solicitudesDeInscripcion"
