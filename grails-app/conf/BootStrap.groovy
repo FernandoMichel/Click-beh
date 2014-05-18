@@ -1,22 +1,7 @@
 import escuelaingles.*
 class BootStrap {
-    
-    def mailService
-    
 
     def init = { servletContext ->
-        
-        
-        
-//        mailService.sendMail{
-//        to "daniel_michel@ciencias.unam.mx"
-//        from "daniel_michel@ciencias.unam.mx"
-//        subject "New Account"
-//        html """
-//        some text here """
-//        }   
-        
-        
         
         def profePrueba=new Profesor(
         nombre:"Profe",

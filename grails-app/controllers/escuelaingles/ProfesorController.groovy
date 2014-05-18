@@ -7,6 +7,7 @@ import org.springframework.web.multipart.commons.CommonsMultipartFile
 @Transactional(readOnly = true)
 class ProfesorController {
 def fileUploadService
+def mailService
 
     static allowedMethods = [save: "POST", update: "PUT", delete: "DELETE"]
 
@@ -167,6 +168,13 @@ def fileUploadService
    
     @Transactional
     def rechazar(Profesor profesorInstance) {
+        mailService.sendMail{
+            to profesorInstance.correo
+            from "noreply.clickbeh@gmail.com"
+            subject "Postulacion para profesor de ingles, rechazada"
+            html """
+            some text here """
+        }
         profesorInstance.delete flush:true
         flash.message="Se ha rechazado el registro del profesor ${profesorInstance}"
         redirect action:"verificarDatosProfesor"
@@ -174,6 +182,13 @@ def fileUploadService
    
     @Transactional
     def aceptar(Profesor profesorInstance) {
+        mailService.sendMail{
+            to profesorInstance.correo
+            from "noreply.clickbeh@gmail.com"
+            subject "Postulacion para profesor de ingles, aceptada"
+            html """
+            some text here """
+        }
         profesorInstance.aceptado=true
         profesorInstance.save flush:true
         flash.message="Se ha aceptado el registro del profesor ${profesorInstance}"
