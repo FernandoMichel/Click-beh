@@ -8,6 +8,11 @@ class SesController {
     def opcionProfesorAlumno() {
     
     }
+    
+    def accesoDenegado() {
+    
+    }
+    
     def logout(){
         session.user=null
         redirect(uri: " ")

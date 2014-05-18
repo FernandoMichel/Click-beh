@@ -49,8 +49,10 @@
 				<ul id="nav">
    
 					<li id="home"><g:link controller="profesor" action="interfazProfesor" class="menu">Inicio</g:link></li>
-					<li id="about"><g:link controller="inscripcion" action="solicitudesDeInscripcion" class="menu">Inscripciones</g:link></li>
-					<li id="portfolio"> <g:link controller="inscripcion" action="calificar" class="menu">Calificaciones</g:link></li>
+                                        <g:if test="${session.user.aceptado}">
+                                            <li id="about"><g:link controller="inscripcion" action="solicitudesDeInscripcion" class="menu">Inscripciones</g:link></li>
+                                            <li id="portfolio"> <g:link controller="inscripcion" action="calificar" class="menu">Calificaciones</g:link></li>
+                                        </g:if>
                                         <li id="manejar"> <g:link class="menu" controller="Profesor" action="edit" resource="${session.user}">Manejar Cuenta</g:link></li>
                                         <li id="cerrar"><g:link controller="ses" action="logout" class="menu"> Cerrar sesión </g:link><li>
 
@@ -62,9 +64,9 @@
 		<div class="clear"></div>
 	</div>
 		<div id="edit-profesor" class="content scaffold-edit" role="main">
-			<h1><g:message code="default.edit.label" args="[entityName]" /></h1>
+			<h1>Manejo de cuenta</h1>
 			<g:if test="${flash.message}">
-			<div class="message" role="status">${flash.message}</div>
+                            <div class="message" role="status">${flash.message}</div>
 			</g:if>
 			<g:hasErrors bean="${profesorInstance}">
 			<ul class="errors" role="alert">

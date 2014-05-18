@@ -8,12 +8,13 @@ import org.springframework.web.multipart.commons.CommonsMultipartFile
 class ProfesorController {
 def fileUploadService
 def mailService
+def accessService
 
     static allowedMethods = [save: "POST", update: "PUT", delete: "DELETE"]
+    
 
     def index(Integer max) {
-        params.max = Math.min(max ?: 10, 100)
-        respond Profesor.list(params), model:[profesorInstanceCount: Profesor.count()]
+        redirect action:"interfazProfesor"
     }
 
     def verCursosVisitante(Integer max) {
@@ -22,28 +23,41 @@ def mailService
     }
 
     def verCursosAlumno(Integer max) {
-        params.max = Math.min(max ?: 10, 100)
-        respond Profesor.list(params), model:[profesorInstanceCount: Profesor.count()]
+        if (accessService.acceso(session.user, 2)){
+            params.max = Math.min(max ?: 10, 100)
+            respond Profesor.list(params), model:[profesorInstanceCount: Profesor.count()]
+        }else{
+            redirect controller: "ses", action:"accesoDenegado"
+        }
     }
 
     def verificarDatosProfesor(Integer max) {
-        if (session.user && (session.user=="Administrador")){
-        params.max = Math.min(max ?: 10, 100)
-        respond Profesor.list(params), model:[profesorInstanceCount: Profesor.count()]
+        if (accessService.acceso(session.user, 1)){
+            params.max = Math.min(max ?: 10, 100)
+            respond Profesor.list(params), model:[profesorInstanceCount: Profesor.count()]
         }else{
-            session.user=null
-            redirect(uri: " ")
+            redirect controller: "ses", action:"accesoDenegado"
         }
     }
     
-    def interfazProfesor(String correo, String contrasena){
-        
+    def interfazProfesor(){
+        if (!accessService.acceso(session.user, 3)){
+            redirect controller: "ses", action:"accesoDenegado"
+        }else{
+            if (!session.user.aceptado){
+                redirect action:"solicitudEnProceso"
+            }
+        }
     }
 
     def show(Profesor profesorInstance) {
-        session.user = profesorInstance
-         flash.message="Tu cuenta se ha registrado exitosamente"
-        redirect controller: "inscripcion", action: "solicitudesDeInscripcion"
+        if (accessService.acceso(session.user, 3)){
+            session.user = profesorInstance
+            flash.message="Tus datos se han actualizado exitosamente"
+            redirect controller: "profesor", action: "interfazProfesor"
+        }else{
+            redirect controller:"ses", action:"accesoDenegado"
+        }
     }
 
     def create() {
@@ -87,15 +101,16 @@ def mailService
            profesorInstance.save flush:true
            session.user = profesorInstance
            flash.message="Tu cuenta se ha registrado exitosamente"
-           redirect action: "interfazProfesor"
-        }
-        else
-        {
+           redirect action: "solicitudEnProceso"
+        }else{
             respond profesorInstance, [status: CREATED]
-        }        
+        }
     }
 
     def edit(Profesor profesorInstance) {
+        if (!accessService.acceso(session.user, 3)){
+            redirect controller:"ses", action:"accesoDenegado"
+        }
         respond profesorInstance
     }
 
@@ -194,6 +209,8 @@ def mailService
         flash.message="Se ha aceptado el registro del profesor ${profesorInstance}"
         redirect action:"verificarDatosProfesor"
     }
+    
+    def solicitudEnProceso(){}
 def certificado(Profesor profesorInstance){
     
 }

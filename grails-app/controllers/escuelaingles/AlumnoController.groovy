@@ -7,12 +7,12 @@ import grails.transaction.Transactional
 
 @Transactional(readOnly = true)
 class AlumnoController {
+def accessService
 
     static allowedMethods = [save: "POST", update: "PUT", delete: "DELETE"]
 
     def index(Integer max) {
-        params.max = Math.min(max ?: 10, 100)
-        respond Alumno.list(params), model:[alumnoInstanceCount: Alumno.count()]
+        redirect controller: "alumno", action: "interfazAlumno"
     }
 
     def show(Alumno alumnoInstance) {
@@ -23,9 +23,11 @@ class AlumnoController {
         respond new Alumno(params)
     }
     
-    def interfazAlumno(){}
-    
-    def consultarCalifacacion(){}
+    def interfazAlumno(){
+        if (!accessService.acceso(session.user, 2)){
+            redirect controller: "ses", action:"accesoDenegado"
+        }
+    }
     
 
     @Transactional
@@ -54,6 +56,9 @@ class AlumnoController {
     }
 
     def edit(Alumno alumnoInstance) {
+        if (!accessService.acceso(session.user, 2)){
+            redirect controller: "ses", action:"accesoDenegado"
+        }
         respond alumnoInstance
     }
 
@@ -78,10 +83,6 @@ class AlumnoController {
             }
             '*'{ respond alumnoInstance, [status: OK] }
         }
-    }
-
-    def actualizarDatos(){
-        redirect action: "opcionProfesorAlumno"
     }
     
     @Transactional

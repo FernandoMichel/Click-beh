@@ -5,34 +5,54 @@ import grails.transaction.Transactional
 
 @Transactional(readOnly = true)
 class InscripcionController {
+def accessService
 
     static allowedMethods = [save: "POST", update: "PUT", delete: "DELETE"]
 
     def index(Integer max) {
-        params.max = Math.min(max ?: 10, 100)
-        respond Inscripcion.list(params), model:[inscripcionInstanceCount: Inscripcion.count()]
+        redirect controller: "ses", action "accesoDenegado"
     }
     def solicitudesDeInscripcion(Integer max) {
-        params.max = Math.min(max ?: 10, 100)
-        respond Inscripcion.list(params), model:[inscripcionInstanceCount: Inscripcion.count()]
+        if (accessService.acceso(session.user, 3)){
+            if (session.user.aceptado){
+                params.max = Math.min(max ?: 10, 100)
+                respond Inscripcion.list(params), model:[inscripcionInstanceCount: Inscripcion.count()]
+            }else{
+                redirect controller:"profesor", action: "interfazProfesor"
+            }
+        }else{
+            redirect controller: "ses", action: "accesoDenegado"
+        }
     }
  
     def consultarCalificacion(Integer max) {
-        params.max = Math.min(max ?: 10, 100)
-        respond Inscripcion.list(params), model:[inscripcionInstanceCount: Inscripcion.count()]
+        if (accessService.acceso(session.user, 2)){
+            params.max = Math.min(max ?: 10, 100)
+            respond Inscripcion.list(params), model:[inscripcionInstanceCount: Inscripcion.count()]
+        }else{
+            redirect controller: "ses", action: "accesoDenegado"
+        }
     }
  
     def calificar(Integer max) {
-        params.max = Math.min(max ?: 10, 100)
-        respond Inscripcion.list(params), model:[inscripcionInstanceCount: Inscripcion.count()]
+        if (accessService.acceso(session.user, 3)){
+            if (session.user.aceptado){
+                params.max = Math.min(max ?: 10, 100)
+                respond Inscripcion.list(params), model:[inscripcionInstanceCount: Inscripcion.count()]
+            }else{
+                redirect controller:"profesor", action: "interfazProfesor"
+            }
+        }else{
+            redirect controller: "ses", action: "accesoDenegado"
+        }
     }
     
     def show(Inscripcion inscripcionInstance) {
-        respond inscripcionInstance
+        redirect controller: "ses", action "accesoDenegado"
     }
 
     def create() {
-        respond new Inscripcion(params)
+        redirect controller: "ses", action "accesoDenegado"
     }
 
     @Transactional
@@ -59,7 +79,7 @@ class InscripcionController {
     }
 
     def edit(Inscripcion inscripcionInstance) {
-        respond inscripcionInstance
+        redirect controller: "ses", action "accesoDenegado"
     }
 
     @Transactional
