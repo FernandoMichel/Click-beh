@@ -3,6 +3,24 @@ class BootStrap {
 
     def init = { servletContext ->
         
+        def fantasma=new Profesor(
+        nombre:"este profesor",
+        apellp:" ya no labora",
+        apellm:" con nosotros",
+        contrasena:"pass",
+        confContrasena:"pass",
+        correo:"noreply.clickbeh@gmail.com",
+        nivel:"Principiante",
+        horario:"matutino",
+        aceptado:false,
+        dirCertificado:" ",
+        dirVideo:" "
+        )
+        fantasma.save()
+        if(fantasma.hasErrors()){
+            println fantasma.errors
+        }
+        
         def profePrueba=new Profesor(
         nombre:"Profe",
         apellp:"de",

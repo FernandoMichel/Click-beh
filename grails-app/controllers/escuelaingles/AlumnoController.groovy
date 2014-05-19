@@ -113,4 +113,17 @@ def accessService
             '*'{ render status: NOT_FOUND }
         }
     }
+    
+    @Transactional
+    def eliminar(){
+        
+        def inscrips=Inscripcion.findWhere(alumno:session.user)
+        inscrips.each{
+            it.delete()
+        } 
+        session.user.delete()
+        session.user=null
+        flash.message="Cuenta eliminada"
+        redirect uri:" "
+    }
 }

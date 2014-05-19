@@ -82,6 +82,8 @@
 				</fieldset>
 				<fieldset class="buttons">
 					<g:actionSubmit class="save" action="update" value="${message(code: 'default.button.update.label', default: 'Update')}" />
+                			<g:actionSubmit class="save" action="eliminar" value="${message(code: ' ', default: 'Eliminar')}" />
+
 				</fieldset>
 			</g:form>
 		</div>

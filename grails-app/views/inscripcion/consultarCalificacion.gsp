@@ -73,7 +73,7 @@
 					<tr>
 					
 						<g:sortableColumn property="profesor.nombre" title="${message(code: ' ', default: 'Profesor')}" />
-						<g:sortableColumn property="profesor.nivel" title="Nivel" />
+						<g:sortableColumn property="nivel" title="Nivel" />
 						<g:sortableColumn property="calificacion" title="Calificación" />
 						<g:sortableColumn property="dirConstancia" title="Constancia" />
 					

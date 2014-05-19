@@ -171,7 +171,8 @@ def accessService
             Inscripcion inscrip=new Inscripcion(
             alumno: session.user, //se asume que si un usuario esta intentando una inscripcion, entonces ha iniciado sesion como alumno
             profesor: profesorInstance,
-            aceptado: false
+            aceptado: false,
+            nivel: profesorInstance.nivel
         )
         inscrip.save flush:true
         if(inscrip.hasErrors()){
@@ -214,4 +215,18 @@ def accessService
 def certificado(Profesor profesorInstance){
     
 }
+
+    @Transactional
+    def eliminar(){
+        def prof=Profesor.findWhere(correo:"noreply.clickbeh@gmail.com")
+        def inscrips=Inscripcion.findWhere(profesor:session.user)
+        inscrips.each{
+            it.profesor=prof
+            it.save()
+        } 
+        session.user.delete()
+        session.user=null
+        flash.message="Cuenta eliminada"
+        redirect uri:" "
+    }
 }
