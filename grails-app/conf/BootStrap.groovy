@@ -31,8 +31,8 @@ class BootStrap {
         nivel:"Principiante",
         horario:"matutino",
         aceptado:true,
-        dirCertificado:"certificado_prof@gmail.com.pdf",
-        dirVideo:"video_prof@gmail.com.mp4"
+        dirCertificado:"certificado_daniel_michel@ciencias.unam.mx.pdf",
+        dirVideo:"video_daniel_michel@ciencias.unam.mx.mp4"
         )
         profePrueba.save()
         if(profePrueba.hasErrors()){

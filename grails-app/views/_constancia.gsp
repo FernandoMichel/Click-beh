@@ -17,15 +17,6 @@
     <!-- [template css javascript] begin -->
     <link rel="stylesheet" href="css/project.css" type="text/css" media="screen, projection" />
     <!-- [template css javascript] end -->
-	
-	<!-- [JS] begin -->
-    <script  type="text/javascript" src="js/jquery-1.3.1.min.js"></script> 
-    <script  type="text/javascript" src="js/scripts.js"></script>
-    <script  type="text/javascript" src="js/coda-slider.1.1.1.js"></script>
-    <script  type="text/javascript" src="js/jquery-easing-compatibility.1.2.pack.js"></script>
-    <script  type="text/javascript" src="js/jquery-easing.1.2.pack.js"></script>
-    <!-- [JS] end -->
-  
 		
 	</head>
 	<body>
@@ -47,13 +38,19 @@
 	<!-- END TOP SECTION -->
    
 	<!-- START MEDIUM SECTION -->
-	
+	<p style="text-align: center">
+            Por esta constancia, Click-Beh certifica que el alumno<br/>
+            <strong>${insc.alumno}</strong><br/>
+            Acreditó el curso de idioma inglés del nivel <strong>${insc.nivel}</strong><br/>
+            Obteniendo una calificación aprobatoria de <strong>${insc.calificacion}</strong> en una escala de 10.
+            
+        </p>
 	<!-- END MEDIUM SECTION -->
    
    	<!-- START FOOTER -->
    	<div class="container_12">
 	   	<p class="footer">
-	   		Copyright 2014 by <strong><i>Clic-Beh</i></strong> <br/>
+	   		<strong><i>Clic-Beh</i></strong> <br/>
 		</p>
 	</div>
 	<!-- END FOOTER -->
