@@ -84,7 +84,9 @@
                                     <g:if test="${session.user.correo == inscripcionInstance.alumno.correo && inscripcionInstance.aceptado==true}">
 					<tr class="${(i % 2) == 0 ? 'even' : 'odd'}">
                                             
-                                                <td>${fieldValue(bean: inscripcionInstance, field: "profesor")}</td>
+                                                <td><g:if test="${profesorInstance.correo!="noreply.clickbeh@gmail.com"}">
+                                                        ${fieldValue(bean: inscripcionInstance, field: "profesor")}
+                                                    </g:if></td>
                                                 <td>${fieldValue(bean: inscripcionInstance, field: "profesor.nivel")}</td>
                                                 <td><g:if test="${inscripcionInstance.calificacion==-1}">
                                                         Aún no hay calificación para este curso

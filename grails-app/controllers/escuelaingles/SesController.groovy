@@ -26,7 +26,7 @@ class SesController {
             redirect controller: "Alumno",action: "interfazAlumno"
             }else{
             encontrado = Profesor.findWhere(correo:params['correo'],contrasena:params['contrasena'])
-            if(encontrado){
+            if(encontrado && encontrado.correo!="noreply.clickbeh@gmail.com"){
                 session.user = encontrado
                 redirect controller: "Profesor",action: "interfazProfesor"
             }else{

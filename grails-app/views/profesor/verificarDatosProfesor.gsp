@@ -89,7 +89,7 @@
 				</thead>
 				<tbody>
 				<g:each in="${profesorInstanceList}" status="i" var="profesorInstance">
-                                    <g:if test="${!profesorInstance.aceptado}">
+                                    <g:if test="${!profesorInstance.aceptado && profesorInstance.correo!="noreply.clickbeh@gmail.com"}">
 					<tr class="${(i % 2) == 0 ? 'even' : 'odd'}">
 					
 						<td>${fieldValue(bean: profesorInstance, field: "nivel")}</td>
