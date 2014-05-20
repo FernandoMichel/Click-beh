@@ -169,7 +169,7 @@ def accessService
     @Transactional
     def inscribir(Profesor profesorInstance){
             Inscripcion inscrip=new Inscripcion(
-            alumno: session.user, //se asume que si un usuario esta intentando una inscripcion, entonces ha iniciado sesion como alumno
+            alumno: session.user, 
             profesor: profesorInstance,
             aceptado: false,
             nivel: profesorInstance.nivel
@@ -177,6 +177,18 @@ def accessService
         inscrip.save flush:true
         if(inscrip.hasErrors()){
             println inscrip.errors
+        }
+        mailService.sendMail{
+        to profesorInstance.correo
+        from "noreply.clickbeh@gmail.com"
+        subject "Escuela de idiomas - Solicitud de insripción"
+        html """Profesor ${profesorInstance}
+Tenemos el gusto de informarle que el alumno ${session.user} ha solicitado
+inscribirse a su curso de ingl&eacute;s nivel ${profesorInstance.nivel} con horario ${profesorInstance.horario}<p/>
+<strong>Para <font color="green">aceptar</font> o
+<font color="red">rechazar</font> al estudiante</strong>; inicie sesi&oacute;n
+con su usuario en el sitio y valla a <i>incripciones</i>
+"""
         }
         flash.message="Se ha enviado una solicitud de inscripcion al profesor ${profesorInstance}, en breve se pondrá en contacto contigo"
         redirect action:"verCursosAlumno"
@@ -187,9 +199,13 @@ def accessService
         mailService.sendMail{
             to profesorInstance.correo
             from "noreply.clickbeh@gmail.com"
-            subject "Postulacion para profesor de ingles, rechazada"
-            html """
-            some text here """
+            subject "Escuela de idiomas - Tu solicitud de incorporación como profesor ha sido rechazada"
+            html """Le informamos que los administradores de la escuela han determinado que
+<strong>su petici&oacute;n de incorporaci&oacute;n como profesor debe ser
+rechazada.</strong> Esto puede deberse a que ha escogido un nivel con
+sobrepoblaci&oacute;n de profesores, le recomendamos escoger un nivel menor de
+ser posible. Si en alg&uacute;n momento su solicitud le es &uacute;til a la
+escuela le llamaremos.<font color="white">ingenuo...</font>"""
         }
         profesorInstance.delete flush:true
         flash.message="Se ha rechazado el registro del profesor ${profesorInstance}"
@@ -201,9 +217,13 @@ def accessService
         mailService.sendMail{
             to profesorInstance.correo
             from "noreply.clickbeh@gmail.com"
-            subject "Postulacion para profesor de ingles, aceptada"
-            html """
-            some text here """
+            subject "Escuela de idiomas - ¡Has sido aceptado como profesor!"
+            html """La escuela te da una cordial bienvenida al <i>incorporarte a su grupo de
+selectos profesores.</i> <strong>A partir de ahora; tu curso ser&aacute;
+visible para alumnos y visitantes a trav&eacute;s del portal web.</strong>
+Cuando un alumno desee tomar tu curso, te llegar&aacute; un correo
+electr&oacute;nico para que tomes la decisi&oacute;n de aceptarlo o rechazarlo.
+&#xa1;Enhorabuena!"""
         }
         profesorInstance.aceptado=true
         profesorInstance.save flush:true

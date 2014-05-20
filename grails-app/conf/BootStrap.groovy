@@ -54,7 +54,8 @@ class BootStrap {
         def inscPrueba=new Inscripcion(
             alumno: alumnoPrueba,
             profesor: profePrueba,
-            aceptado: false
+            aceptado: false,
+            nivel: "Principiante"
         )
         inscPrueba.save()
         if(inscPrueba.hasErrors()){

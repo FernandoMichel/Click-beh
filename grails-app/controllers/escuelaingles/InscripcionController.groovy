@@ -6,6 +6,7 @@ import grails.transaction.Transactional
 @Transactional(readOnly = true)
 class InscripcionController {
 def accessService
+def mailService
 
     static allowedMethods = [save: "POST", update: "PUT", delete: "DELETE"]
 
@@ -126,6 +127,14 @@ def accessService
    
     @Transactional
     def rechazar(Inscripcion inscripcionInstance) {
+        mailService.sendMail{
+            to inscripcionInstance.alumno.correo
+            from "noreply.clickbeh@gmail.com"
+            subject "Tu solicitud de inscripción ha sido rechazada"
+            html """
+El profesor ${inscripcionInstance.profesor} ha <storng><font color="red">rechazado</font> tu solicitud de inscripci&oacute;n</strong> al curso de inglés nivel ${inscripcionInstance.nivel} con horario ${inscripcionInstance.profesor.horario}.
+"""
+        }
         inscripcionInstance.delete flush:true
         flash.message="Se ha rechazado la inscripcion del alumno ${inscripcionInstance.alumno}"
         redirect action:"solicitudesDeInscripcion"
@@ -135,7 +144,14 @@ def accessService
     def aceptar(Inscripcion inscripcionInstance) {
         inscripcionInstance.aceptado=true
         inscripcionInstance.calificacion=-1
-        inscripcionInstance.save flush:true
+        mailService.sendMail{
+            to inscripcionInstance.alumno.correo
+            from "noreply.clickbeh@gmail.com"
+            subject "Escuela de idiomas - Tu solicitud de inscripción ha sido aceptada"
+            html """<strong>Se te a <font color="green">aceptado</font> en el curso</strong> de 
+ingl&eacute;s nivel ${inscripcionInstance.nivel} con horario ${inscripcionInstance.profesor.horario} del profesor ${inscripcionInstance.profesor}.
+"""
+        }
         flash.message="Se ha aceptado la inscripcion del alumno ${inscripcionInstance.alumno}"
         redirect action:"solicitudesDeInscripcion"
     }
