@@ -166,7 +166,10 @@ ingl&eacute;s nivel ${inscripcionInstance.nivel} con horario ${inscripcionInstan
         if (cal>5){
             def directorio=servletContext.getRealPath("files/")
             String nombreArch="/constancia_${inscripcionInstance.alumno.correo}_${inscripcionInstance.profesor.correo}.pdf"
-                pdfRenderingService.render([template: "/constancia", model: [insc: inscripcionInstance]], new File(directorio+nombreArch).newOutputStream())
+            File arch=new File(directorio+nombreArch)
+            print arch
+            arch.createNewFile()
+            pdfRenderingService.render([template: "/constancia", model: [insc: inscripcionInstance]], arch.newOutputStream())
         inscripcionInstance.dirConstancia= nombreArch
         inscripcionInstance.save flush:true
         }
