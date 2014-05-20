@@ -84,7 +84,7 @@
                                     <g:if test="${session.user.correo == inscripcionInstance.alumno.correo && inscripcionInstance.aceptado==true}">
 					<tr class="${(i % 2) == 0 ? 'even' : 'odd'}">
                                             
-                                                <td><g:if test="${profesorInstance.correo!="noreply.clickbeh@gmail.com"}">
+                                                <td><g:if test="${inscripcionInstance.profesor.correo!="noreply.clickbeh@gmail.com"}">
                                                         ${fieldValue(bean: inscripcionInstance, field: "profesor")}
                                                     </g:if></td>
                                                 <td>${fieldValue(bean: inscripcionInstance, field: "profesor.nivel")}</td>

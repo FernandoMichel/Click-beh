@@ -7,6 +7,7 @@ import grails.transaction.Transactional
 class InscripcionController {
 def accessService
 def mailService
+def pdfRenderingService
 
     static allowedMethods = [save: "POST", update: "PUT", delete: "DELETE"]
 
@@ -158,9 +159,17 @@ ingl&eacute;s nivel ${inscripcionInstance.nivel} con horario ${inscripcionInstan
    
     @Transactional
     def asignarCalif(Inscripcion inscripcionInstance){
-        inscripcionInstance.calificacion= params['calificacion'] as int
+        int cal=params['calificacion'] as int
+        inscripcionInstance.calificacion= cal
         inscripcionInstance.save flush:true
         flash.message="Se ha asignado la calificación al alumno ${inscripcionInstance.alumno}"
+        if (cal>5){
+            def directorio=servletContext.getRealPath("files/")
+            String nombreArch="/constancia_${inscripcionInstance.alumno.correo}_${inscripcionInstance.profesor.correo}.pdf"
+                pdfRenderingService.render([template: "/constancia", model: [insc: inscripcionInstance]], new File(directorio+nombreArch).newOutputStream())
+        inscripcionInstance.dirConstancia= nombreArch
+        inscripcionInstance.save flush:true
+        }
         redirect action:"calificar"
     }
     
